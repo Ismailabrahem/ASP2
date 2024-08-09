@@ -1,0 +1,119 @@
+.container[b-q1xmz2sf9a] {
+
+}
+
+.product-img[b-q1xmz2sf9a] {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 1200px) {
+    .product-img img[b-q1xmz2sf9a] {
+        width: 600px;
+        height: auto;
+    }
+
+    .container[b-q1xmz2sf9a] {
+        width: 600px;
+        height: auto;
+
+    }
+
+    .detail-carousel[b-q1xmz2sf9a] {
+        display: none;
+    }
+
+    .prod-bottom-border[b-q1xmz2sf9a] {
+    }
+
+    .big-screen-details[b-q1xmz2sf9a] {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 40px;
+    }
+
+    .right-view-bscreen[b-q1xmz2sf9a] {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-img img[b-q1xmz2sf9a] {
+        width: 100%;
+        height: auto;
+    }
+
+    .prod-bottom-border[b-q1xmz2sf9a] {
+        border-bottom: 2px solid #dbe3f5;
+
+    }
+
+    .detail-carousel[b-q1xmz2sf9a] {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+}
+
+
+.product-name[b-q1xmz2sf9a] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.product-price[b-q1xmz2sf9a] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.product-size[b-q1xmz2sf9a] {
+    margin-top: 25px;
+}
+
+.product-color[b-q1xmz2sf9a] {
+    margin-top: 25px;
+}
+
+.product-description[b-q1xmz2sf9a] {
+    margin-top: 25px;
+}
+
+img[b-q1xmz2sf9a] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 15px;
+}
+
+.confirmation-message[b-q1xmz2sf9a] {
+    background-color: rgba(0, 128, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    text-align: center;
+}
+
+    .confirmation-message.show[b-q1xmz2sf9a] {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+
+    .confirmation-message.hide[b-q1xmz2sf9a] {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+h3[b-q1xmz2sf9a] {
+    font-weight: 600;
+}
+

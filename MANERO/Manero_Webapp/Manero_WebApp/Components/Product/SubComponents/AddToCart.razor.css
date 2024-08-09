@@ -1,0 +1,29 @@
+﻿.add-cart {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.add-cart h6 {
+    margin-bottom: auto;
+}
+
+    .add-cart button {
+        padding: 10px 20px;
+        background-color: inherit;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        opacity: 1;
+    }
+
+        .add-cart button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }

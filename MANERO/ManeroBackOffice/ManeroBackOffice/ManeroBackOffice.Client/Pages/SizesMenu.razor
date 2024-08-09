@@ -1,0 +1,16 @@
+﻿@page "/Sizes"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+<h3>Sizes</h3>
+<p>Please press a button to handle sizes.</p>
+<div class="nav-buttons">
+    <a class="btn btn-lg btn-success" href="createsize"><i class="fa-solid fa-plus"></i>Create Size</a>
+    <a class="btn btn-lg btn-info" href="findsize"><i class="fa-solid fa-eye"></i>View Size</a>
+    <a class="btn btn-lg btn-warning" href="updatesize"><i class="fa-solid fa-pen-to-square"></i>Update Size</a>
+    <a class="btn btn-lg btn-danger" href="deletesize"><i class="fa-solid fa-trash"></i>Delete Size</a>
+</div>
+@code {
+
+}

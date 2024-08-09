@@ -1,0 +1,38 @@
+﻿.content {
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.user-img {
+    width: 100px;
+    height: auto;
+}
+
+.user-img img {
+    height: 60px;
+    width: auto;
+    background-color: white;
+    color: white;
+}
+
+.review-content {
+    width: 400px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    height: 17%;
+}
+
+    .review-header h3 {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .review-text .date {
+        font-size: 12px;
+        font-weight: 200;
+        margin-top: 0;
+    }

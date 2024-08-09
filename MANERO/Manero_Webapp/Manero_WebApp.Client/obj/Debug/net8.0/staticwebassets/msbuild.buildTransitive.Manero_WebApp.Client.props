@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Manero_WebApp.Client.props" />
+</Project>

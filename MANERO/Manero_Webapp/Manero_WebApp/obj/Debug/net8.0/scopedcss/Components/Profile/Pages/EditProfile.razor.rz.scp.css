@@ -1,0 +1,10 @@
+.profile-edit[b-i6qyaopl8f] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input input[b-i6qyaopl8f] {
+    border: 2px solid red;
+    border-radius: 32px;
+}

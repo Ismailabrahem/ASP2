@@ -1,0 +1,28 @@
+.prod-quantity[b-s2j6diprmx] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 7.5rem;
+    height: 3rem;
+    border: 2px solid #dbe3f5;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.btn-quantity[b-s2j6diprmx] {
+    border: none;
+    background-color: white;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.btn-quantity:disabled[b-s2j6diprmx] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.prod-quantity span[b-s2j6diprmx] {
+    margin: 0 10px;
+    font-size: 1.2rem;
+}

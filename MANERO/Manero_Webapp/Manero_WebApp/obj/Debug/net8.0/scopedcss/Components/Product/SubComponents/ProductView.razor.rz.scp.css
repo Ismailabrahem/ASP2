@@ -1,0 +1,23 @@
+﻿.container[b-ok8fisuq4n] {
+}
+
+
+@media (min-width: 1200px) {
+    .product-view img[b-ok8fisuq4n] {
+        width: 300px;
+        height: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-view img[b-ok8fisuq4n] {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+h3[b-ok8fisuq4n] {
+    font-size: 20px;
+    margin-top: 10px;
+}

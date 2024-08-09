@@ -1,0 +1,72 @@
+.profile-home[b-41e4oelbvc] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-rows[b-41e4oelbvc] {
+    padding-top: 333px;
+    width: 100%;
+}
+
+.button-row[b-41e4oelbvc] {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none; 
+    color: inherit;
+}
+
+.button-icon[b-41e4oelbvc] {
+    width: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-text[b-41e4oelbvc] {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.button-arrow[b-41e4oelbvc] {
+    width: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img[b-41e4oelbvc] {
+    max-width: 100%;
+    height: auto;
+}
+
+.logoutButton[b-41e4oelbvc] {
+    width: 12rem;
+    height: 4rem;
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    border-radius: 20rem;
+    font-size: 20px;
+}
+
+.cancelButton[b-41e4oelbvc] {
+    background-color: #ffffff;
+    border: none;
+    margin-top: 10px;
+    width: 8rem;
+    height: 3rem;
+    font-size: 20px;
+}
+
+.rusure[b-41e4oelbvc] {
+    margin-top: 1rem;
+    text-align: center;
+    margin: 2rem 1rem;
+}

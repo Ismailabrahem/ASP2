@@ -1,0 +1,19 @@
+﻿
+<link rel="stylesheet" href="AddToCart.razor.css" />
+
+<div class="add-cart">
+
+    <button @onclick="OnAddToCart" disabled="@IsDisabled">
+    <h6>+ ADD TO CART</h6>
+    </button>
+</div>
+
+
+@code {
+    [Parameter]
+    public EventCallback OnAddToCart { get; set; }
+
+    [Parameter]
+    public bool IsDisabled { get; set; }
+
+}

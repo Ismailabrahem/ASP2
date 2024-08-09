@@ -1,0 +1,23 @@
+﻿@inject NavigationManager NavigationManager
+@inject CartService CartService
+@rendermode InteractiveServer
+
+<link rel="stylesheet" href="ProductView.razor.css" />
+
+<div class="product-view" @onclick="NavigateToProduct">
+    <img src="@Product?.ImageUrl" alt="@Product?.Title" />
+    <h3>@Product?.ShortDescription</h3>
+    <p>@Product?.Price.ToString("C")</p>
+</div>
+
+@code {
+    [Parameter]
+    public ProductEntity? Product { get; set; }
+
+    // private string ProductImage => "/images/home/clothes-1.jpg"; 
+
+    private void NavigateToProduct()
+    {
+        NavigationManager.NavigateTo($"/product/{Product?.Id}");
+    }
+}

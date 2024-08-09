@@ -1,0 +1,28 @@
+.promo-banner[b-ssril9dfnd] {
+    height: 150px;
+    background-image: url('/images/home/promo-banner-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+}
+
+h3[b-ssril9dfnd] {
+    padding-top: 30px;
+    padding-left: 20px;
+    color: white;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+a[b-ssril9dfnd] {
+    margin-left: 25px;
+    background-color: white;
+    padding: 15px 30px 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}

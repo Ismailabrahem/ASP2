@@ -1,0 +1,112 @@
+﻿@page "/updatesize"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>Update Size</h3>
+
+<div class="form-group">
+    <label for="sizeId">Size ID</label>
+    <InputText id="sizeId" class="form-control" @bind-Value="sizeId" />
+</div>
+<button class="btn btn-primary" style="margin-top: 1rem;" @onclick="FetchSize">Fetch Size</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (size != null)
+{
+    <EditForm Model="@size" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="sizeName">Size Name</label>
+            <InputText id="sizeName" class="form-control" @bind-Value="size.SizeName" />
+        </div>
+
+        <button type="submit" style="margin-top: 1rem;" class="btn btn-primary">Update</button>
+    </EditForm>
+}
+
+@code {
+    private string sizeId = string.Empty;
+    private SizeModel? size = null;
+    private string fetchMessage = string.Empty;
+
+    private async Task FetchSize()
+    {
+        fetchMessage = "Fetching size...";
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/sizes/{sizeId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var sizeJson = await response.Content.ReadAsStringAsync();
+                size = JsonSerializer.Deserialize<SizeModel>(sizeJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (size != null)
+                {
+                    fetchMessage = "Size details fetched successfully. You can now update the size.";
+                }
+                else
+                {
+                    fetchMessage = "Failed to fetch size details.";
+                }
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                fetchMessage = "No size found. Please try again.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (size == null)
+        {
+            fetchMessage = "No size to update.";
+            return;
+        }
+
+        try
+        {
+            var jsonSize = JsonSerializer.Serialize(size);
+            var content = new StringContent(jsonSize, System.Text.Encoding.UTF8, "application/json");
+
+            var response = await Http.PutAsync($"http://localhost:7181/api/sizes/{sizeId}?", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                fetchMessage = "Size updated successfully.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+}

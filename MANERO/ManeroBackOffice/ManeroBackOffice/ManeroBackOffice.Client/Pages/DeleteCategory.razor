@@ -1,0 +1,139 @@
+﻿@page "/deletecategory"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>Delete Category</h3>
+
+<div class="form-group">
+    <label for="categoryId">Category ID</label>
+    <InputText id="categoryId" class="form-control" @bind-Value="categoryId" />
+</div>
+<button class="btn btn-primary" @onclick="FetchCategory" style="margin-top: 1rem;">Fetch Category</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (category != null)
+{
+    <div class="mt-4">
+        <h4>Category Details</h4>
+        <div><strong>Category Name:</strong> @category.CategoryName</div>
+        <div><strong>Subcategories:</strong> @string.Join(", ", category.SubCategories)</div>
+
+        <button class="btn btn-danger mt-3" @onclick="ConfirmDelete">Delete Category</button>
+    </div>
+}
+
+@if (confirmDelete)
+{
+    <div class="alert alert-danger mt-3">
+        Are you sure you want to delete this category?
+        <button class="btn btn-danger ml-2" @onclick="PerformDeleteCategory">Yes</button>
+        <button class="btn btn-secondary ml-2" @onclick="CancelDelete">No</button>
+    </div>
+}
+
+@code {
+    private string categoryId = string.Empty;
+    private CategoryModel? category = null;
+    private string fetchMessage = string.Empty;
+    private bool confirmDelete = false;
+
+    private async Task FetchCategory()
+    {
+        fetchMessage = "Fetching category...";
+        Console.WriteLine("Fetching category...");
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/categories/{categoryId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var categoryJson = await response.Content.ReadAsStringAsync();
+                category = JsonSerializer.Deserialize<CategoryModel>(categoryJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (category != null)
+                {
+                    fetchMessage = "Category details fetched successfully. You can now delete the category.";
+                    Console.WriteLine("Category details fetched successfully.");
+                }
+                else
+                {
+                    fetchMessage = "Failed to fetch category details.";
+                    Console.WriteLine("Failed to fetch category details.");
+                }
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                fetchMessage = "No category found. Please try again.";
+                Console.WriteLine("No category found. Please try again.");
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+                Console.WriteLine($"Error: {error}");
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+
+    private void ConfirmDelete()
+    {
+        Console.WriteLine("Confirm delete clicked");
+        confirmDelete = true;
+    }
+
+    private void CancelDelete()
+    {
+        Console.WriteLine("Cancel delete clicked");
+        confirmDelete = false;
+    }
+
+    private async Task PerformDeleteCategory()
+    {
+        Console.WriteLine("Perform delete category...");
+        if (category == null)
+        {
+            fetchMessage = "No category to delete.";
+            Console.WriteLine("No category to delete.");
+            return;
+        }
+
+        try
+        {
+            var response = await Http.DeleteAsync($"http://localhost:7181/api/categories/{category.Id}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                fetchMessage = "Category deleted successfully.";
+                Console.WriteLine("Category deleted successfully.");
+                category = null;
+                confirmDelete = false;
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+                Console.WriteLine($"Error deleting category: {error}");
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+            Console.WriteLine($"Exception deleting category: {ex.Message}");
+        }
+    }
+}

@@ -1,0 +1,79 @@
+﻿@page "/findsize"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>View Size</h3>
+
+<div class="form-group">
+    <label for="sizeId">Size ID</label>
+    <InputText id="sizeId" class="form-control" @bind-Value="sizeId" />
+</div>
+<button class="btn btn-primary" style="margin-top: 1rem;" @onclick="FetchSize">Search</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (sizeJson != null)
+{
+    <div class="mt-4">
+        <h4>Size JSON</h4>
+        <pre>@sizeJson</pre>
+    </div>
+}
+
+@code {
+    private string sizeId = string.Empty;
+    private string? sizeJson = null;
+    private string fetchMessage = string.Empty;
+
+    private async Task FetchSize()
+    {
+        if (string.IsNullOrWhiteSpace(sizeId))
+        {
+            fetchMessage = "Size ID cannot be empty.";
+            sizeJson = null;
+            return;
+        }
+
+        fetchMessage = "Fetching size...";
+        sizeJson = null;
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/sizes/{sizeId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var size = await response.Content.ReadAsStringAsync();
+                sizeJson = JsonSerializer.Serialize(JsonDocument.Parse(size), new JsonSerializerOptions { WriteIndented = true });
+                fetchMessage = "Size fetched successfully.";
+                Console.WriteLine("Size fetched successfully");
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                Console.WriteLine("No size found. Please try again.");
+                fetchMessage = "No size found. Please try again.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error response: {error}");
+                fetchMessage = $"Something went wrong: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+}

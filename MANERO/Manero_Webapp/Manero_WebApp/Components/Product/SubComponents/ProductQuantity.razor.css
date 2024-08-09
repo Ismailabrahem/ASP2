@@ -1,0 +1,28 @@
+﻿.prod-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 7.5rem;
+    height: 3rem;
+    border: 2px solid #dbe3f5;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.btn-quantity {
+    border: none;
+    background-color: white;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.btn-quantity:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.prod-quantity span {
+    margin: 0 10px;
+    font-size: 1.2rem;
+}

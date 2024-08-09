@@ -1,0 +1,63 @@
+﻿@page "/CreateFile"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<h3>Create File</h3>
+<p>Please upload a file to add it to the database</p>
+
+<div class="form-group">
+    <label for="fileUpload">Choose File</label>
+    <InputFile id="fileUpload" class="form-control" OnChange="OnFileSelected" />
+</div>
+
+<div class="submit-button mt-3">
+    <button @onclick="UploadFile" class="btn btn-success" disabled="@(selectedFile == null)">Upload</button>
+</div>
+
+@if (uploadSuccess)
+{
+    <div class="alert alert-success mt-3">
+        File uploaded successfully.
+        <a href="@uploadedFileUrl" target="_blank">View Uploaded File</a>
+    </div>
+}
+
+@code {
+    private IBrowserFile? selectedFile;
+    private bool uploadSuccess = false;
+    private string uploadedFileUrl = string.Empty;
+
+    private void OnFileSelected(InputFileChangeEventArgs e)
+    {
+        selectedFile = e.File;
+    }
+
+    private async Task UploadFile()
+    {
+        if (selectedFile != null)
+        {
+            using var content = new MultipartFormDataContent();
+            var fileContent = new StreamContent(selectedFile.OpenReadStream());
+            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(selectedFile.ContentType);
+
+            content.Add(fileContent, "file", selectedFile.Name);
+
+            var response = await Http.PostAsync("http://localhost:7050/api/FileUploader", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                uploadSuccess = true;
+                uploadedFileUrl = await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                // Handle error (display a message or log it)
+                uploadSuccess = false;
+            }
+        }
+    }
+}

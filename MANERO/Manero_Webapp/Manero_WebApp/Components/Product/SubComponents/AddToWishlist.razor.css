@@ -1,0 +1,25 @@
+﻿i {
+    border: 2px solid #dbe3f5;
+    border-radius: 50%;
+    padding: 25px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #626262;
+    cursor: pointer;
+}
+
+.fa-heart {
+    color: white;
+    transition: color 0.3s;
+}
+
+.red-border {
+    -webkit-text-stroke: 1px red;
+}
+
+.filled-red {
+    color: red;
+}

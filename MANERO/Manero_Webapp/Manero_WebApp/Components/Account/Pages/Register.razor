@@ -1,0 +1,164 @@
+﻿@page "/Account/Register"
+
+@using System.ComponentModel.DataAnnotations
+@using System.Text
+@using System.Text.Encodings.Web
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.WebUtilities
+@using Manero_WebApp.Data
+
+@inject UserManager<ApplicationUser> UserManager
+@inject IUserStore<ApplicationUser> UserStore
+@inject SignInManager<ApplicationUser> SignInManager
+@inject IEmailSender<ApplicationUser> EmailSender
+@inject ILogger<Register> Logger
+@inject NavigationManager NavigationManager
+@inject IdentityRedirectManager RedirectManager
+@inject HttpClient http
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config {theme: colors: {white: '#FFFFFF' black: '#111111'} {screens: {'sm': '640px', 'md': '768px', 'lg': '1024px', 'xl': '1280px', '2xl': '1536px',</script>
+
+<PageTitle>Signup</PageTitle>
+
+<div class="text-center">
+    <div class="flex justify-center mt-5">
+    <img class="lg:hidden" src="../../Images/rectangle.png" alt="">
+    </div>
+    
+    <div class="">
+        <StatusMessage Message="@Message" />
+        <EditForm class="" Model="Input" asp-route-returnUrl="@ReturnUrl" method="post" OnValidSubmit="RegisterUser" FormName="register">
+            <DataAnnotationsValidator />
+            <h1 class="font-semibold text-2xl mb-5 mt-2">Sign Up</h1>
+            
+            <div class="grid justify-center mt-4">
+                <div class="relative">
+                <label class="absolute -top-3 left-5 px-1 bg-white font-light" for="firstname">First Name</label>
+                <InputText @bind-Value="Input.FirstName" class="border rounded-full w-96 h-10 p-4" autocomplete="username" aria-required="true"/>
+                </div>
+            </div>
+            <ValidationMessage For="() => Input.FirstName" class="text-danger" />
+            <div class="grid justify-center mt-4">
+                <div class="relative">
+                <label class="absolute -top-3 left-5 px-1 bg-white font-light" for="lastname">Last Name</label>
+                <InputText @bind-Value="Input.LastName" class="border rounded-full w-96 h-10 p-4" autocomplete="username" aria-required="true" />
+                </div>
+            </div>
+            <ValidationMessage For="() => Input.LastName" class="text-danger" />
+            <div class="grid justify-center mt-4">
+                <div class="relative">
+                <label class="absolute -top-3 left-5 px-1 bg-white font-light" for="email">Email</label>
+                <InputText @bind-Value="Input.Email" class="border rounded-full w-96 h-10 p-4" autocomplete="username" aria-required="true" />
+                </div>
+            </div>
+            <ValidationMessage For="() => Input.Email" class="text-danger" />
+            <div class="grid justify-center mt-4">
+                <div class="relative">
+                <label class="absolute -top-3 left-5 px-1 bg-white font-light" for="password">Password</label>
+                <InputText type="password" @bind-Value="Input.Password" class="border rounded-full w-96 h-10 p-4" autocomplete="new-password" aria-required="true" />
+                </div>
+            </div>
+            <ValidationMessage For="() => Input.Password" class="text-danger" />
+            <div class="grid justify-center mt-4">
+                <div class="relative">
+                <label class="absolute -top-3 left-5 px-1 bg-white font-light" for="confirm-password">Confirm Password</label>
+                <InputText type="password" @bind-Value="Input.ConfirmPassword" class="border rounded-full w-96 h-10 p-4" autocomplete="new-password" aria-required="true" />
+                </div>
+            </div>
+            <ValidationMessage For="() => Input.ConfirmPassword" class="text-danger" />
+            <div>
+                <div>
+                    <InputCheckbox @bind-Value="Input.TermsAndConditions" />
+                    <label class="mt-2" >
+                        I accept the <NavLink href="/terms">Terms & Conditions</NavLink>
+                    </label>
+                </div>
+                <ValidationMessage For="() => Input.TermsAndConditions" class="text-danger" />
+            </div>
+            <button type="submit" class="mt-2 bg-black rounded-3xl text-white px-40 py-2">SIGN UP</button>
+        </EditForm>
+        <p class="mb-10">Already have an account? <a class="font-bold" href="/account/login">Sign in</a></p>
+
+        <div>
+        <ExternalLoginPicker />
+        </div>
+    </div>
+</div>
+
+@code {
+
+    private sealed class RegisterFormModel
+    {
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; } = "";
+
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; } = "";
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; } = "";
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; } = "";
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; } = "";
+
+        [Required]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "You must accept the Terms & Conditions.")]
+        public bool TermsAndConditions { get; set; }
+
+    }
+
+    private IEnumerable<IdentityError>? identityErrors;
+
+    [SupplyParameterFromForm]
+    private RegisterFormModel Input { get; set; } = new();
+
+    [SupplyParameterFromQuery]
+    private string? ReturnUrl { get; set; }
+
+    private string? Message => identityErrors is null ? null : $"Error: {string.Join(", ", identityErrors.Select(error => error.Description))}";
+
+    public async Task RegisterUser(EditContext editContext)
+    {
+        var user = new ApplicationUser
+        {
+            EmailConfirmed = true,
+            FirstName = Input.FirstName,
+            LastName = Input.LastName,
+            UserName = Input.Email,
+            Email = Input.Email
+        };
+
+        var result = await UserManager.CreateAsync(user, Input.Password);
+
+        if (!result.Succeeded)
+            return;
+
+         //if (UserManager.Options.SignIn.RequireConfirmedAccount)
+         //{
+         //   await http.PostAsJsonAsync<RegisterFormModel>("http://localhost:7196/api/GenerateVerificationCodeUsingHttp", Input);
+         //    RedirectManager.RedirectTo("Account/RegisterConfirmation", new() { ["email"] = Input.Email, ["returnUrl"] = ReturnUrl });
+         //   
+         //}
+
+        await SignInManager.SignInAsync(user, isPersistent: false);
+        RedirectManager.RedirectTo("/account/login");
+    }
+
+
+    
+}
+

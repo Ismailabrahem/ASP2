@@ -1,0 +1,110 @@
+﻿@page "/createproduct"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<EditForm Model="@product" OnValidSubmit="HandleValidSubmit" FormName="createProductForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <h3>Create product</h3>
+    <p>Please fill in the form to create a product and add to database</p>
+    <div class="form-group">
+        <label for="batchNumber">Batch Number</label>
+        <InputText id="batchNumber" class="form-control" @bind-Value="product.BatchNumber" />
+    </div>
+    <div class="form-group">
+        <label for="title">Title</label>
+        <InputText id="title" class="form-control" @bind-Value="product.Title" />
+    </div>
+    <div class="form-group">
+        <label for="shortDescription">Short Description</label>
+        <InputTextArea id="shortDescription" class="form-control" @bind-Value="product.ShortDescription" />
+    </div>
+    <div class="form-group">
+        <label for="longDescription">Long Description</label>
+        <InputTextArea id="longDescription" class="form-control" @bind-Value="product.LongDescription" />
+    </div>
+    <div class="form-group">
+        <label for="categories">Categories (comma separated)</label>
+        <InputText id="categories" class="form-control" @bind-Value="categories" />
+    </div>
+    <div class="form-group">
+        <label for="color">Color</label>
+        <InputText id="color" class="form-control" @bind-Value="product.Color" />
+    </div>
+    <div class="form-group">
+        <label for="size">Size</label>
+        <InputSelect id="size" class="form-control" @bind-Value="product.Size">
+            <option value="" disabled selected>Pick a size</option>
+            @foreach (var size in validSizes)
+            {
+                <option value="@size">@size</option>
+            }
+        </InputSelect>
+        @if (sizeValidationError != null)
+        {
+            <div class="text-danger">@sizeValidationError</div>
+        }
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <InputNumber id="price" class="form-control" @bind-Value="product.Price" />
+    </div>
+    <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <InputText id="imageUrl" class="form-control" @bind-Value="product.ImageUrl" />
+    </div>
+    <div class="submit-button">
+        <button type="submit" class="btn btn-success">Create</button>
+    </div>
+</EditForm>
+
+@if (productCreatedSuccessfully)
+{
+    <div class="alert alert-success mt-3">
+        Product created successfully.
+    </div>
+}
+
+@code {
+    private ProductModel product = new ProductModel();
+    private string categories = string.Empty;
+    private string? sizeValidationError = null;
+    private bool productCreatedSuccessfully = false;
+    private readonly List<string> validSizes = new List<string> { "XS", "S", "M", "L", "XL" };
+
+    private async Task HandleValidSubmit()
+    {
+        if (string.IsNullOrWhiteSpace(product.Size) || !validSizes.Contains(product.Size))
+        {
+            sizeValidationError = "Please enter a valid size (XS, S, M, L, XL)";
+            return;
+        }
+        sizeValidationError = null;
+
+        product.Categories = categories.Split(',').Select(c => c.Trim()).ToList();
+
+        var jsonProduct = JsonSerializer.Serialize(product);
+        var content = new StringContent(jsonProduct, System.Text.Encoding.UTF8, "application/json");
+
+        var response = await Http.PostAsync("http://localhost:7181/api/CreateProduct", content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            productCreatedSuccessfully = true;
+            product = new ProductModel();
+            categories = string.Empty;
+        }
+        else
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(error);
+        }
+    }
+}

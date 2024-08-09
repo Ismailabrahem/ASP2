@@ -1,0 +1,16 @@
+﻿@page "/Categories"
+@using Microsoft.AspNetCore.Authorization
+@* @attribute [Authorize] *@
+@rendermode InteractiveAuto
+
+<h3>Categories</h3>
+<p>Please press a button to handle categories.</p>
+<div class="nav-buttons">
+    <a class="btn btn-lg btn-success" href="createcategory"><i class="fa-solid fa-plus"></i>Create Category</a>
+    <a class="btn btn-lg btn-info" href="findcategory"><i class="fa-solid fa-eye"></i>View Category</a>
+    <a class="btn btn-lg btn-warning" href="updatecategory"><i class="fa-solid fa-pen-to-square"></i>Update Category</a>
+    <a class="btn btn-lg btn-danger" href="deletecategory"><i class="fa-solid fa-trash"></i>Delete Category</a>
+</div>
+@code {
+
+}

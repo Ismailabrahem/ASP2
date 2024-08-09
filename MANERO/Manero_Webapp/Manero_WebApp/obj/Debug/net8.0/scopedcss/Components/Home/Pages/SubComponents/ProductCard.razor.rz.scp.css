@@ -1,0 +1,28 @@
+.product-card[b-ahvc5c2wra] {
+    margin-left: 20px;
+}
+
+.product-img img[b-ahvc5c2wra] {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rating[b-ahvc5c2wra] {
+    margin: 5px 0;
+}
+
+.product-name[b-ahvc5c2wra] {
+    color: #626262
+}
+
+.product-price[b-ahvc5c2wra] {
+    margin-top: -10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.product-card a[b-ahvc5c2wra] {
+    text-decoration: none;
+    color: inherit;
+}

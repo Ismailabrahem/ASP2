@@ -1,0 +1,137 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Manero_WebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Manero_WebApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Ellipse_30.png",
+      "PackagePath": "staticwebassets\\Images\\Ellipse_30.png"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Home\\clothes-1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Home\\clothes-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Home\\clothes-2.jpg",
+      "PackagePath": "staticwebassets\\Images\\Home\\clothes-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Home\\clothes-3.jpg",
+      "PackagePath": "staticwebassets\\Images\\Home\\clothes-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Home\\hero-img-1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Home\\hero-img-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Home\\hero-img-2.jpg",
+      "PackagePath": "staticwebassets\\Images\\Home\\hero-img-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Home\\hero-img-3.jpg",
+      "PackagePath": "staticwebassets\\Images\\Home\\hero-img-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Home\\promo-banner-1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Home\\promo-banner-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Home\\rating.svg",
+      "PackagePath": "staticwebassets\\Images\\Home\\rating.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Profile\\calendar.svg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\calendar.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Profile\\card.svg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\card.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Profile\\gift.svg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\gift.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Profile\\log_out.svg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\log_out.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Profile\\map_pin.svg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\map_pin.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Profile\\small_arrow.svg",
+      "PackagePath": "staticwebassets\\Images\\Profile\\small_arrow.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Welcome\\big_ring_1.svg",
+      "PackagePath": "staticwebassets\\Images\\Welcome\\big_ring_1.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Welcome\\big_ring_2.svg",
+      "PackagePath": "staticwebassets\\Images\\Welcome\\big_ring_2.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Welcome\\ring_1.svg",
+      "PackagePath": "staticwebassets\\Images\\Welcome\\ring_1.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\Welcome\\ring_2.svg",
+      "PackagePath": "staticwebassets\\Images\\Welcome\\ring_2.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\mask-group.svg",
+      "PackagePath": "staticwebassets\\Images\\mask-group.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\mask_group.png",
+      "PackagePath": "staticwebassets\\Images\\mask_group.png"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\rectangle.png",
+      "PackagePath": "staticwebassets\\Images\\rectangle.png"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\rectangle.svg",
+      "PackagePath": "staticwebassets\\Images\\rectangle.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\Images\\review-message.svg",
+      "PackagePath": "staticwebassets\\Images\\review-message.svg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\js\\contactPopup.js",
+      "PackagePath": "staticwebassets\\js\\contactPopup.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\js\\heroSlideshow.js",
+      "PackagePath": "staticwebassets\\js\\heroSlideshow.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp\\wwwroot\\js\\welcomeScript.js",
+      "PackagePath": "staticwebassets\\js\\welcomeScript.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Manero_WebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Manero_WebApp.props",
+      "PackagePath": "build\\Manero_WebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Manero_WebApp.props",
+      "PackagePath": "buildMultiTargeting\\Manero_WebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Manero_WebApp.props",
+      "PackagePath": "buildTransitive\\Manero_WebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

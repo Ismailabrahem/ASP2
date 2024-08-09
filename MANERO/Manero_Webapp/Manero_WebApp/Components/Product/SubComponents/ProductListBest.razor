@@ -1,0 +1,40 @@
+﻿@page "/bestseller_products"
+@inject ProductService ProductService
+
+<link rel="stylesheet" href="ProductListBest.razor.css" />
+
+<div class="container">
+<h3>Best sellers</h3>
+
+@if (AllProducts == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="product-list">
+        @foreach (var product in AllProducts)
+        {
+            <ProductView Product="product" />
+        }
+    </div>
+}
+</div>
+@code {
+    private List<ProductEntity>? AllProducts { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var products = await ProductService.GetAllProductsAsync();
+        AllProducts = products
+            .GroupBy(x => x.ShortDescription)
+            .Select(g =>
+            {
+                var representative = g.First();
+                representative.Sizes = g.Select(x => x.Size).Distinct().ToList();
+                representative.Colors = g.Select(x => x.Color).Distinct().ToList();
+                return representative;
+            })
+            .ToList();
+    }
+}

@@ -1,0 +1,41 @@
+﻿.product-content {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.products-text {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+    .products-text h2 {
+        font-weight: 700;
+    }
+
+.products-all {
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+    .products-all a {
+        word-spacing: 8px;
+    }
+
+    .products-all i {
+        font-size: 14px;
+        margin-left: -8px;
+    }
+
+
+.product-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+}
+
+button {
+    border: none;
+    background-color: inherit;
+}

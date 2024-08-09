@@ -1,0 +1,12 @@
+﻿<link rel="stylesheet" href="AddToWishlist.razor.css" />
+
+<i class="fa fa-heart fa-lg red-border @(isRed ? "filled-red" : "filled-white")" @onclick="ToggleColor"></i>
+
+@code {
+    private bool isRed = false;
+
+    private void ToggleColor()
+    {
+        isRed = !isRed;
+    }
+}

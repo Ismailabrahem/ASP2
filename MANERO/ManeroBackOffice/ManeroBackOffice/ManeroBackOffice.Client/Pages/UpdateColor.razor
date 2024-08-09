@@ -1,0 +1,116 @@
+﻿@page "/updatecolor"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>Update Color</h3>
+
+<div class="form-group">
+    <label for="colorId">Color ID</label>
+    <InputText id="colorId" class="form-control" @bind-Value="colorId" />
+</div>
+<button class="btn btn-primary" style="margin-top: 1rem;" @onclick="FetchColor">Fetch Color</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (color != null)
+{
+    <EditForm Model="@color" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="colorName">Color Name</label>
+            <InputText id="colorName" class="form-control" @bind-Value="color.ColorName" />
+        </div>
+
+        <button type="submit" style="margin-top: 1rem;" class="btn btn-primary">Update</button>
+    </EditForm>
+}
+
+@code {
+    private string colorId = string.Empty;
+    private ColorModel? color = null;
+    private string fetchMessage = string.Empty;
+
+    private async Task FetchColor()
+    {
+        fetchMessage = "Fetching color...";
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/colors/{colorId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var colorJson = await response.Content.ReadAsStringAsync();
+                color = JsonSerializer.Deserialize<ColorModel>(colorJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (color != null)
+                {
+                    fetchMessage = "Color details fetched successfully. You can now update the color.";
+                }
+                else
+                {
+                    fetchMessage = "Failed to fetch color details.";
+                }
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                fetchMessage = "No color found. Please try again.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (color == null)
+        {
+            fetchMessage = "No color to update.";
+            return;
+        }
+
+        try
+        {
+            var jsonColor = JsonSerializer.Serialize(color);
+            var content = new StringContent(jsonColor, System.Text.Encoding.UTF8, "application/json");
+
+            Console.WriteLine($"Updating color with ID {color.Id}: {jsonColor}");
+
+            var response = await Http.PutAsync($"http://localhost:7181/api/colors/{color.Id}", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                fetchMessage = "Color updated successfully.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+                Console.WriteLine($"Error updating color: {error}");
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+            Console.WriteLine($"Exception updating color: {ex.Message}");
+        }
+    }
+}

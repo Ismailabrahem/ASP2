@@ -1,0 +1,16 @@
+﻿@page "/Colors"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+<h3>Colors</h3>
+<p>Please press a button to handle colors.</p>
+<div class="nav-buttons">
+    <a class="btn btn-lg btn-success" href="createcolor"><i class="fa-solid fa-plus"></i>Create Color</a>
+    <a class="btn btn-lg btn-info" href="findcolor"><i class="fa-solid fa-eye"></i>View Color</a>
+    <a class="btn btn-lg btn-warning" href="updatecolor"><i class="fa-solid fa-pen-to-square"></i>Update Color</a>
+    <a class="btn btn-lg btn-danger" href="deletecolor"><i class="fa-solid fa-trash"></i>Delete Color</a>
+</div>
+@code {
+
+}

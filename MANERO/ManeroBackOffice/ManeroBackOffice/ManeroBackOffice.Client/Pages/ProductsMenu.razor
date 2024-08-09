@@ -1,0 +1,16 @@
+﻿@page "/Products"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+<h3>Products</h3>
+<p>Please press a button to handle products.</p>
+<div class="nav-buttons">
+    <a class="btn btn-lg btn-success" href="createproduct"><i class="fa-solid fa-plus"></i>Create Product</a>
+    <a class="btn btn-lg btn-info" href="findproduct"><i class="fa-solid fa-eye"></i>View Product</a>
+    <a class="btn btn-lg btn-warning" href="updateproduct"><i class="fa-solid fa-pen-to-square"></i>Update Product</a>
+    <a class="btn btn-lg btn-danger" href="deleteproduct"><i class="fa-solid fa-trash"></i>Delete Product</a>
+</div>
+@code {
+
+}

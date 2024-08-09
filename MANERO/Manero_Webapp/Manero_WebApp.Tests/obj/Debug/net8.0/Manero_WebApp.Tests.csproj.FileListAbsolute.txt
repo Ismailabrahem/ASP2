@@ -1,0 +1,7 @@
+C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp.Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_Manero_WebApp.Tests
+C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp.Tests\obj\Debug\net8.0\Manero_WebApp.Tests.csproj.AssemblyReference.cache
+C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp.Tests\obj\Debug\net8.0\Manero_WebApp.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp.Tests\obj\Debug\net8.0\Manero_WebApp.Tests.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp.Tests\obj\Debug\net8.0\Manero_WebApp.Tests.AssemblyInfo.cs
+C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp.Tests\obj\Debug\net8.0\Manero_WebApp.Tests.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp.Tests\bin\Debug\net8.0\.msCoverageSourceRootsMapping_Manero_WebApp.Tests

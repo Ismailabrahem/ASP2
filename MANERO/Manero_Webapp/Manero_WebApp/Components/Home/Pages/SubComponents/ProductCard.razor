@@ -1,0 +1,25 @@
+﻿@inject ProductService ProductService
+@inject NavigationManager NavigationManager
+
+@rendermode InteractiveServer
+
+<div class="product-card" @onclick="NavigateToProduct" >
+    <a>
+        <div class="product-img">
+            <img src="@Product?.ImageUrl" />
+        </div>
+        <img class="rating" src="/images/home/rating.svg" />
+        <p class="product-name">@Product?.ShortDescription</p>
+        <p class="product-price">@Product?.Price.ToString("C")</p>
+    </a>
+</div>
+
+@code {
+    [Parameter]
+    public ProductEntity? Product { get; set; }
+
+    private void NavigateToProduct()
+    {
+        NavigationManager.NavigateTo($"/product/{Product?.Id}");
+    }
+}

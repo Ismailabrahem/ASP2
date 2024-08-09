@@ -1,0 +1,32 @@
+﻿@using Manero_WebApp.Models
+<link rel="stylesheet" href="ProductSize.razor.css" />
+
+<h3>Size</h3>
+
+<div class="prod-sizes">
+    @foreach (var size in AllSizes)
+    {
+        <a @onclick="() => SelectSize(size)" class="@(SelectedSize == size ? "selected" : "") @(Sizes.Contains(size) ? "" : "unavailable")">@size</a>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public List<string> Sizes { get; set; } = new();
+
+    [Parameter]
+    public List<string> AllSizes { get; set; } = new() { "XS", "S", "M", "L", "XL", "XXL" };
+
+    [Parameter]
+    public string? SelectedSize { get; set; }
+
+    [Parameter]
+    public EventCallback<string> SelectedSizeChanged { get; set; }
+
+    private async Task SelectSize(string size)
+    {
+        if (!Sizes.Contains(size)) return;
+        SelectedSize = size;
+        await SelectedSizeChanged.InvokeAsync(size);
+    }
+}

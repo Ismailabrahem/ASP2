@@ -1,0 +1,31 @@
+﻿@page "/addreview"
+
+<link rel="stylesheet" href="Reviews.razor.css" />
+
+<div class="add-container">
+    <i class="fa-regular fa-angle-left fa-lg"></i>
+
+    <div class="add-review-title">
+        <h3>Leave a review</h3>
+    </div>
+
+    <div class="review-img">
+        <img src="/Images/review-message.svg" />
+        <img src="../../Images/rectangle.png" />
+    </div>
+
+    <div class="add-review-content">
+        <h4>Please rate the quality of the product</h4>
+        <ProductRating />
+        <p>Your comments and suggestions help us improve the quality!</p>
+    </div>
+
+    <div class="review-submit">
+        <input />
+        <button>SUBMIT</button>
+    </div>
+</div>
+
+@code {
+
+}

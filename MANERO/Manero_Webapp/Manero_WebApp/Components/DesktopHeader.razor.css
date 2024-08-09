@@ -1,0 +1,62 @@
+﻿header{
+    display: none;
+}
+
+@media (min-width: 1025px) {
+
+
+    header {
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 2em;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    nav li {
+        margin: 0 1em;
+    }
+
+    .logo{
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    .links{
+        
+    }
+
+
+    .header-bag {
+        font-size: 25px;
+        margin-right: 5px;
+        cursor: pointer;
+        color: black;
+    }
+
+    .bag-total {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: #F4303C;
+        text-align: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: 700;
+        position: absolute;
+        top: 30px;
+        right: 65px;
+    }
+
+}

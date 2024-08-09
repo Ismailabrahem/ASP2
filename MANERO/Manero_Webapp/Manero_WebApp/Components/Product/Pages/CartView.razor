@@ -1,0 +1,48 @@
+﻿@page "/cartTEST"
+@inject CartService CartService
+@rendermode InteractiveServer
+
+<link rel="stylesheet" href="CartView.razor.css" />
+
+<div class="cart-view">
+    <h3>Shopping Cart</h3>
+
+    @if (CartItems == null || !CartItems.Any())
+    {
+        <p>Your cart is empty</p>
+    }
+    else
+    {
+        <div class="cart-items">
+            @foreach (var item in CartItems)
+            {
+                <div class="cart-item">
+                    <img src="@item.ImageUrl" alt="@item.Title" />
+                    <div>
+                        <h4>@item.Title</h4>
+                        <p>Price: @item.Price.ToString("C")</p>
+                        <p>Size: @item.Size</p>
+                        <p>Color: @item.Color</p>
+                        <p>Quantity: @item.Quantity</p>
+                    </div>
+                </div>
+            }
+        </div>
+        <button @onclick="ClearCart">Clear Cart</button>
+    }
+</div>
+
+@code {
+    private List<CartItem> CartItems { get; set; } = new();
+
+    protected override void OnInitialized()
+    {
+        CartItems = CartService.GetCartItems();
+    }
+
+    private void ClearCart()
+    {
+        CartService.ClearCart();
+        CartItems = CartService.GetCartItems();
+    }
+}

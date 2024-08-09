@@ -1,0 +1,38 @@
+.content[b-nam9egjqmx] {
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.user-img[b-nam9egjqmx] {
+    width: 100px;
+    height: auto;
+}
+
+.user-img img[b-nam9egjqmx] {
+    height: 60px;
+    width: auto;
+    background-color: white;
+    color: white;
+}
+
+.review-content[b-nam9egjqmx] {
+    width: 400px;
+}
+
+.review-header[b-nam9egjqmx] {
+    display: flex;
+    justify-content: space-between;
+    height: 17%;
+}
+
+    .review-header h3[b-nam9egjqmx] {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .review-text .date[b-nam9egjqmx] {
+        font-size: 12px;
+        font-weight: 200;
+        margin-top: 0;
+    }

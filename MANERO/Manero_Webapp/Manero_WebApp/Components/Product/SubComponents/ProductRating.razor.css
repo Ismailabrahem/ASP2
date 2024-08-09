@@ -1,0 +1,30 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+}
+
+p {
+    margin-top: 1rem;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+    .star.filled {
+        color: gold;
+    }

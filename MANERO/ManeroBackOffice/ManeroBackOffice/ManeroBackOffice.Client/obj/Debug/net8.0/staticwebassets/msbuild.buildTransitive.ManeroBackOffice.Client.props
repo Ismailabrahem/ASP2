@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ManeroBackOffice.Client.props" />
+</Project>

@@ -1,0 +1,132 @@
+﻿@page "/order"
+@inject NavigationManager NavigationManager
+@inject ProductService ProductService
+@rendermode InteractiveServer
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <p>@errorMessage</p>
+}
+else if (Product != null)
+{
+    <div class="products">
+        <div class="product">
+            <div class="prodimg">
+                <h7 class="sale">SALE</h7>
+                <img src="@Product.ImageUrl" alt="@Product.Title" />
+            </div>
+
+            <div class="info-quantity">
+                <div class="info">
+                    <p class="prodDetails">@Product.Title</p>
+                    <p class="price">@Product.Price kr</p>
+                    <p class="size">Size: @Product.Size</p>
+                    <p color>Color: @Product.Color</p>
+                </div>
+
+                <div class="quantity">
+                    <button class="plus circle" @onclick="IncreaseQuantity"><i class="fa-solid fa-plus"></i></button>
+                    <p class="quantityNumber">@quantity</p>
+                    <button class="minus circle" @onclick="DecreaseQuantity"><i class="fa-solid fa-minus"></i></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="summary">
+        <div class="promocode">
+            <p>Promocode applied</p>
+            <i class="fa-solid fa-check"></i>
+        </div>
+
+        <div class="subtotal">
+            <p>Subtotal</p>
+            <p>$@subtotalPrice</p>
+        </div>
+        <div class="discount">
+            <p>Discount</p>
+            <p>@discount</p>
+        </div>
+        <div class="delivery">
+            <p>Delivery</p>
+            <p class="free">Free</p>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <div class="total">
+            <p>Total</p>
+            <p>$@totalPrice</p>
+        </div>
+        <a class="checkout" href="/checkout">
+            <button class="checkoutButton">PROCEED TO CHECKOUT</button>
+        </a>
+    </div>
+}
+else
+{
+    <p>Loading...</p>
+}
+
+
+
+
+@code {
+    private int quantity = 1;
+    private double basePrice;
+    private double subtotalPrice;
+    private double discount = -40.39;
+    private double totalPrice;
+
+    private string errorMessage = string.Empty;
+
+    private void IncreaseQuantity()
+    {
+        quantity++;
+        UpdatePrices();
+    }
+
+    private void DecreaseQuantity()
+    {
+        if (quantity > 1)
+        {
+            quantity--;
+            UpdatePrices();
+        }
+    }
+
+    private void UpdatePrices()
+    {
+        subtotalPrice = basePrice * quantity;
+        totalPrice = subtotalPrice + discount;
+        StateHasChanged();
+    }
+
+    public ProductEntity? Product { get; set; }
+    private string productId = "828c7ce8-8c3e-4a60-bf72-3c12fd6d24ce";
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            Product = await ProductService.GetAllProductByIdAsync(productId!);
+            if (Product == null)
+            {
+                errorMessage = "Product not found.";
+            }
+            else
+            {
+                basePrice = (double)Product.Price;
+                UpdatePrices();
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error loading product: {ex.Message}";
+        }
+
+    }
+}
+
+

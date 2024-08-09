@@ -1,0 +1,63 @@
+﻿@page "/createcategory"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<EditForm Model="@category" OnValidSubmit="HandleValidSubmit" FormName="createCategoryForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <h3>Create Category</h3>
+    <p>Please fill in the form to create a category and add to the database</p>
+    <div class="form-group">
+        <label for="categoryName">Category Name</label>
+        <InputText id="categoryName" class="form-control" @bind-Value="category.CategoryName" />
+    </div>
+    <div class="form-group">
+        <label for="subCategories">Subcategories (comma separated)</label>
+        <InputText id="subCategories" class="form-control" @bind-Value="subCategories" />
+    </div>
+    <div class="submit-button">
+        <button type="submit" class="btn btn-success">Create</button>
+    </div>
+</EditForm>
+
+@if (categoryCreatedSuccessfully)
+{
+    <div class="alert alert-success mt-3">
+        Category created successfully.
+    </div>
+}
+
+@code {
+    private CategoryModel category = new CategoryModel();
+    private string subCategories = string.Empty;
+    private bool categoryCreatedSuccessfully = false;
+
+    private async Task HandleValidSubmit()
+    {
+        category.SubCategories = subCategories.Split(',').Select(c => c.Trim()).ToList();
+
+        var jsonCategory = Newtonsoft.Json.JsonConvert.SerializeObject(category);
+        var content = new StringContent(jsonCategory, System.Text.Encoding.UTF8, "application/json");
+
+        var response = await Http.PostAsync("http://localhost:7181/api/CreateCategory", content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            categoryCreatedSuccessfully = true;
+            category = new CategoryModel();
+            subCategories = string.Empty;
+        }
+        else
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"Error: {error}");
+        }
+    }
+}

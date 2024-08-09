@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manero_WebApp", "Manero_WebApp\Manero_WebApp.csproj", "{C2FA6B1D-23A1-4598-A7A3-D19CBAD6BC2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manero_WebApp.Client", "Manero_WebApp.Client\Manero_WebApp.Client.csproj", "{20BF433E-9AF7-4561-B481-387F1E39B45D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manero_WebApp.Tests", "Manero_WebApp.Tests\Manero_WebApp.Tests.csproj", "{9C3A2A5C-9B9B-4BB9-8B0C-9B524C3B2CDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2FA6B1D-23A1-4598-A7A3-D19CBAD6BC2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2FA6B1D-23A1-4598-A7A3-D19CBAD6BC2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2FA6B1D-23A1-4598-A7A3-D19CBAD6BC2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2FA6B1D-23A1-4598-A7A3-D19CBAD6BC2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20BF433E-9AF7-4561-B481-387F1E39B45D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20BF433E-9AF7-4561-B481-387F1E39B45D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20BF433E-9AF7-4561-B481-387F1E39B45D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20BF433E-9AF7-4561-B481-387F1E39B45D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C3A2A5C-9B9B-4BB9-8B0C-9B524C3B2CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3A2A5C-9B9B-4BB9-8B0C-9B524C3B2CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3A2A5C-9B9B-4BB9-8B0C-9B524C3B2CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3A2A5C-9B9B-4BB9-8B0C-9B524C3B2CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EBE946D-038C-4408-B509-C93BBCC132F7}
+	EndGlobalSection
+EndGlobal

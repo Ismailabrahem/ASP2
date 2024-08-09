@@ -1,0 +1,15 @@
+﻿@page "/FilesMenu"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+<h3>File Management</h3>
+<p>Please press a button to handle files.</p>
+
+<div class="nav-buttons">
+    <a class="btn btn-lg btn-success" href="createfile"><i class="fa-solid fa-plus"></i> Create File</a>
+</div>
+
+@code {
+    // You can add any code-behind logic if needed here
+}

@@ -1,0 +1,55 @@
+﻿@page "/createsize"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<EditForm Model="@size" OnValidSubmit="HandleValidSubmit" FormName="createSizeForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <h3>Create Size</h3>
+    <p>Please fill in the form to create a size and add it to the database</p>
+    <div class="form-group">
+        <label for="sizeName">Size Name</label>
+        <InputText id="sizeName" class="form-control" @bind-Value="size.SizeName" />
+    </div>
+    <div class="submit-button">
+        <button type="submit" class="btn btn-success">Create</button>
+    </div>
+</EditForm>
+
+@if (sizeCreatedSuccessfully)
+{
+    <div class="alert alert-success mt-3">
+        Size created successfully.
+    </div>
+}
+
+@code {
+    private SizeModel size = new SizeModel();
+    private bool sizeCreatedSuccessfully = false;
+
+    private async Task HandleValidSubmit()
+    {
+        var jsonSize = JsonSerializer.Serialize(size);
+        var content = new StringContent(jsonSize, System.Text.Encoding.UTF8, "application/json");
+
+        var response = await Http.PostAsync("http://localhost:7181/api/CreateSize", content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            sizeCreatedSuccessfully = true;
+            size = new SizeModel();
+        }
+        else
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(error);
+        }
+    }
+}

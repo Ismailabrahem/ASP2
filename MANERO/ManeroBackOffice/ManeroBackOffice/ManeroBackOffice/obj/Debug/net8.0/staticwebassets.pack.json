@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\ManeroBackOffice\\ManeroBackOffice\\ManeroBackOffice\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ManeroBackOffice.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ManeroBackOffice.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\ManeroBackOffice\\ManeroBackOffice\\ManeroBackOffice\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\ManeroBackOffice\\ManeroBackOffice\\ManeroBackOffice\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\ManeroBackOffice\\ManeroBackOffice\\ManeroBackOffice\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\ManeroBackOffice\\ManeroBackOffice\\ManeroBackOffice\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ManeroBackOffice.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ManeroBackOffice.props",
+      "PackagePath": "build\\ManeroBackOffice.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ManeroBackOffice.props",
+      "PackagePath": "buildMultiTargeting\\ManeroBackOffice.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ManeroBackOffice.props",
+      "PackagePath": "buildTransitive\\ManeroBackOffice.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

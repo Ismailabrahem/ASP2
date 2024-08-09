@@ -1,0 +1,261 @@
+﻿@page "/product/{productId}"
+@using Manero_WebApp.Data
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Net.Http.Json;
+
+@inject NavigationManager NavigationManager
+@inject ProductService ProductService
+@inject CartService CartService
+@inject HttpClient HttpClient
+@* @inject UserManager<ApplicationUser> UserManager *@
+@* @inject AuthenticationStateProvider AuthenticationStateProvider *@
+
+@rendermode InteractiveServer
+
+<link rel="stylesheet" href="_ProductDetails.razor.css" />
+
+<div class="big-screen-details">
+    <div class="left-view-bscreen">
+        <div class="product-img">
+            <img src="@ImageUrl" />
+        </div>
+    </div>
+
+    <div class="right-view-bscreen">
+        <div class="detail-carousel">
+
+            <i class="fa-solid fa-period fa-lg"></i>
+            <i class="fa-solid fa-period fa-lg"></i>
+        </div>
+        <div class="prod-bottom-border"></div>
+
+        <div class="container">
+
+            @if (isLoading)
+            {
+                <p>Loading...</p>
+            }
+            else if (Product == null)
+            {
+                <p>Product not found.</p>
+            }
+            else
+            {
+                <div class="product-name">
+                    <ProductName Name="@Product?.ShortDescription" />
+                    <AddToWishlist />
+                </div>
+
+                <div class="product-rating">
+                    <ProductRating />
+                </div>
+
+                <div class="product-price">
+                    <ProductPrice Price="@Product!.Price" />
+                    <ProductQuantity Quantity="@Quantity" QuantityChanged="OnQuantityChanged" />
+                </div>
+
+                <div class="product-size">
+                    <ProductSize @bind-SelectedSize="selectedSize" Sizes="AvailableSizes" AllSizes="AllSizes" />
+                </div>
+
+                <div class="product-color">
+                    <ProductColor Colors="AvailableColors" AllColors="AllColors" SelectedColor="@selectedColor" OnColorChanged="HandleColorChanged" />
+                </div>
+
+                <div class="product-description">
+                    <h3>Description</h3>
+                    <p>@Product.LongDescription</p>
+                </div>
+
+                <div class="confirmation-message @messageClass">
+                    Added @Product?.Title, @selectedColor, @selectedSize to cart.
+                </div>
+                <div class="add-cart">
+                    <AddToCart OnAddToCart="AddToCart" IsDisabled="string.IsNullOrEmpty(selectedSize) || string.IsNullOrEmpty(selectedColor)" />
+                </div>
+
+@*                 <div>
+                    <ProductReview />
+                </div> *@
+            }
+
+
+
+            @*     <div class="create-review">
+            <h3>Leave a review</h3>
+            <EditForm Model="reviewModel" OnValidSubmit="SubmitReview">
+            <InputText @bind-Value="reviewModel.FirstName" disabled />
+            <InputText @bind-Value="reviewModel.LastName" disabled />
+            <InputNumber @bind-Value="reviewModel.Rating" placeholder="Ditt betyg (1-5)" />
+            <InputTextArea @bind-Value="reviewModel.Comment" placeholder="Comment" />
+            <button type="submit" disabled="@(isAuthenticated == false)">Submit</button>
+            </EditForm>
+            </div> *@
+
+
+        </div>
+    </div>
+</div>
+
+
+    
+
+
+@code {
+    [Parameter]
+    public string? productId { get; set; }
+
+    public ProductEntity? Product { get; set; }
+    public bool isLoading = true;
+    public string ImageUrl { get; set; } = string.Empty;
+
+    public List<string> AvailableSizes { get; set; } = new();
+    public List<string> AvailableColors { get; set; } = new();
+    public List<string> AllSizes { get; set; } = new() { "XS", "S", "M", "L", "XL", "XXL" };
+    public List<string> AllColors { get; set; } = new() { "Red", "LightBlue", "Beige", "DarkBlue","Black" };
+    public string? selectedSize;
+    public string? selectedColor;
+    public int Quantity { get; set; } = 1;
+    private string messageClass = "";
+    private ReviewModel reviewModel = new ReviewModel();
+    // private bool isAuthenticated = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        if (string.IsNullOrEmpty(productId))
+        {
+            NavigationManager.NavigateTo("/not-found");
+            isLoading = false;
+            return;
+        }
+
+        Product = await ProductService.GetAllProductByIdAsync(productId!);
+        if (Product != null)
+        {
+            ImageUrl = Product.ImageUrl;
+            var relatedProducts = await ProductService.GetProductsByShortDescriptionAndBatchAsync(Product.ShortDescription!, Product.BatchNumber);
+            AvailableSizes = relatedProducts.Select(x => x.Size).Distinct().ToList();
+            AvailableColors = relatedProducts.Select(x => x.Color).Distinct().ToList();
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/not-found");
+            isLoading = false;
+            return;
+        }
+        isLoading = false;
+        // var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        // var user = authState.User;
+
+        // isAuthenticated = user.Identity?.IsAuthenticated ?? false;
+
+        // if (isAuthenticated)
+        // {
+        //     var currentUser = await UserManager.GetUserAsync(user);
+        //     reviewModel.FirstName = currentUser!.FirstName;
+        //     reviewModel.LastName = currentUser.LastName;
+        //     reviewModel.ProductBatchNumber = Product?.BatchNumber!;
+        // }
+         
+    }
+
+    // private async Task SubmitReview()
+    // {
+    //     reviewModel.ProductBatchNumber = Product?.BatchNumber!;
+
+    //     try
+    //     {
+    //         var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+    //         var user = authState.User;
+    //         var currentUser = await UserManager.GetUserAsync(user);
+
+    //         reviewModel.FirstName = currentUser!.FirstName;
+    //         reviewModel.LastName = currentUser.LastName;
+
+
+    //         var response = await HttpClient.PostAsJsonAsync("api/review", reviewModel);
+    //         if (response.IsSuccessStatusCode)
+    //         {
+    //             messageClass = "success";
+    //             StateHasChanged();
+    //         }
+    //         else
+    //         {
+    //             messageClass = "error";
+    //             StateHasChanged();
+    //         }
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         messageClass = $"error: {ex.Message}";
+    //         StateHasChanged();
+    //     }
+
+
+        
+    // }
+
+    private void OnQuantityChanged(int newQuantity)
+    {
+        Quantity = newQuantity;
+    }
+
+    private async void AddToCart()
+    {
+        if (Product != null && !string.IsNullOrEmpty(selectedSize) && !string.IsNullOrEmpty(selectedColor))
+        {
+            var cartItem = new CartItem
+                {
+                     ProductId = Product.Id,
+                     Title = Product.Title,
+                     Price = Product.Price,
+                     Size = selectedSize,
+                     Color = selectedColor,
+                     Quantity = Quantity,
+                     ImageUrl = Product.ImageUrl
+                };
+
+            CartService.AddToCart(cartItem);
+            await ShowConfirmationMessage();
+        }
+    }
+
+    private async Task ShowConfirmationMessage()
+    {
+        messageClass = "show";
+
+        await Task.Delay(3000);
+        messageClass = "hide";
+        StateHasChanged();
+
+        await Task.Delay(500);
+        messageClass = "";
+        StateHasChanged();
+
+    }
+
+    private async Task HandleColorChanged(string color)
+    {
+        selectedColor = color;
+        await UpdateImageUrl();
+    }
+
+    private async Task UpdateImageUrl()
+    {
+        if (Product != null && !string.IsNullOrEmpty(selectedColor))
+        {
+            var relatedProducts = await ProductService.GetProductsByShortDescriptionAndBatchAsync(Product.ShortDescription!, Product.BatchNumber);
+            var relatedProduct = relatedProducts.FirstOrDefault(p => p.Color == selectedColor);
+            if (relatedProduct != null)
+            {
+                ImageUrl = relatedProduct.ImageUrl;
+                StateHasChanged();
+            }
+        }
+    }
+
+}

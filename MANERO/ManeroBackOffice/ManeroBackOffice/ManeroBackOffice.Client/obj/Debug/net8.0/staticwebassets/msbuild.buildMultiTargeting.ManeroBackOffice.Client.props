@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ManeroBackOffice.Client.props" />
+</Project>

@@ -1,0 +1,58 @@
+﻿@inject ProductService ProductService
+@inject NavigationManager NavigationManager
+
+@rendermode InteractiveServer
+
+<link rel="stylesheet" href="ProductSideScrollFeatured.razor.css" />
+
+
+<div class="product-content">
+    <div class="products-text">
+        <h2>Featured products</h2>
+        <div class="products-all">
+            <button @onclick="NavigateToFeaturedProducts">
+                <a>view all <i class="fa-solid fa-chevron-right"></i></a>
+            </button>
+        </div>
+    </div>
+
+    <div class="product-list">
+        @if (AllProducts == null)
+        {
+            <p>Loading...</p>
+        }
+        else
+        {
+
+            @foreach (var product in AllProducts)
+            {
+                <ProductCard Product="product" />
+            }
+
+        }
+    </div>
+</div>
+@code {
+    private List<ProductEntity>? AllProducts { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var products = await ProductService.GetAllProductsAsync();
+        AllProducts = products
+            .GroupBy(x => x.ShortDescription)
+            .OrderBy(g => g.Key![0])
+            .Select(g =>
+            {
+                var representative = g.First();
+                representative.Sizes = g.Select(x => x.Size).Distinct().ToList();
+                representative.Colors = g.Select(x => x.Color).Distinct().ToList();
+                return representative;
+            })
+            .ToList();
+    }
+
+    private void NavigateToFeaturedProducts()
+    {
+        NavigationManager.NavigateTo("/featured_products");
+    }
+}

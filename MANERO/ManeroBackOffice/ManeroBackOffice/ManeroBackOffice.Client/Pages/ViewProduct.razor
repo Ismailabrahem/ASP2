@@ -1,0 +1,80 @@
+﻿@page "/findproduct"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>View Product</h3>
+
+<div class="form-group">
+    <label for="productId">Product ID</label>
+    <InputText id="productId" class="form-control" @bind-Value="productId" />
+</div>
+<button class="btn btn-primary" style="margin-top: 1rem;" @onclick="FetchProduct">Search</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (productJson != null)
+{
+    <div class="mt-4">
+        <h4>Product JSON</h4>
+        <pre>@productJson</pre>
+    </div>
+}
+
+@code {
+    private string productId = string.Empty;
+    private string? productJson = null;
+    private string fetchMessage = string.Empty;
+
+
+    private async Task FetchProduct()
+    {
+        if (string.IsNullOrWhiteSpace(productId))
+        {
+            fetchMessage = "Product ID cannot be empty.";
+            productJson = null;
+            return;
+        }
+
+        fetchMessage = "Fetching product...";
+        productJson = null;
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/products/{productId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var product = await response.Content.ReadAsStringAsync();
+                productJson = "Here is the requested product:\n\n" + JsonSerializer.Serialize(JsonDocument.Parse(product), new JsonSerializerOptions { WriteIndented = true });
+                fetchMessage = "Product fetched successfully.";
+                Console.WriteLine("Product fetched successfully");
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                Console.WriteLine("No product found. Please try again.");
+                fetchMessage = "No product found. Please try again.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error response: {error}");
+                fetchMessage = $"Something went wrong: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+}

@@ -1,0 +1,72 @@
+﻿.profile-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-rows {
+    padding-top: 333px;
+    width: 100%;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none; 
+    color: inherit;
+}
+
+.button-icon {
+    width: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-text {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.button-arrow {
+    width: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.logoutButton {
+    width: 12rem;
+    height: 4rem;
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    border-radius: 20rem;
+    font-size: 20px;
+}
+
+.cancelButton {
+    background-color: #ffffff;
+    border: none;
+    margin-top: 10px;
+    width: 8rem;
+    height: 3rem;
+    font-size: 20px;
+}
+
+.rusure {
+    margin-top: 1rem;
+    text-align: center;
+    margin: 2rem 1rem;
+}

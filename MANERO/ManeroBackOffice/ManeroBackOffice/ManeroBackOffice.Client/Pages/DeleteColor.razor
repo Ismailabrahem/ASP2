@@ -1,0 +1,138 @@
+﻿@page "/deletecolor"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>Delete Color</h3>
+
+<div class="form-group">
+    <label for="colorId">Color ID</label>
+    <InputText id="colorId" class="form-control" @bind-Value="colorId" />
+</div>
+<button class="btn btn-primary" @onclick="FetchColor" style="margin-top: 1rem;">Fetch Color</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (color != null)
+{
+    <div class="mt-4">
+        <h4>Color Details</h4>
+        <div><strong>Color Name:</strong> @color.ColorName</div>
+
+        <button class="btn btn-danger mt-3" @onclick="ConfirmDelete">Delete Color</button>
+    </div>
+}
+
+@if (confirmDelete)
+{
+    <div class="alert alert-danger mt-3">
+        Are you sure you want to delete this color?
+        <button class="btn btn-danger ml-2" @onclick="PerformDeleteColor">Yes</button>
+        <button class="btn btn-secondary ml-2" @onclick="CancelDelete">No</button>
+    </div>
+}
+
+@code {
+    private string colorId = string.Empty;
+    private ColorModel? color = null;
+    private string fetchMessage = string.Empty;
+    private bool confirmDelete = false;
+
+    private async Task FetchColor()
+    {
+        fetchMessage = "Fetching color...";
+        Console.WriteLine("Fetching color...");
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/colors/{colorId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var colorJson = await response.Content.ReadAsStringAsync();
+                color = JsonSerializer.Deserialize<ColorModel>(colorJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (color != null)
+                {
+                    fetchMessage = "Color details fetched successfully. You can now delete the color.";
+                    Console.WriteLine("Color details fetched successfully.");
+                }
+                else
+                {
+                    fetchMessage = "Failed to fetch color details.";
+                    Console.WriteLine("Failed to fetch color details.");
+                }
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                fetchMessage = "No color found. Please try again.";
+                Console.WriteLine("No color found. Please try again.");
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+                Console.WriteLine($"Error: {error}");
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+
+    private void ConfirmDelete()
+    {
+        Console.WriteLine("Confirm delete clicked");
+        confirmDelete = true;
+    }
+
+    private void CancelDelete()
+    {
+        Console.WriteLine("Cancel delete clicked");
+        confirmDelete = false;
+    }
+
+    private async Task PerformDeleteColor()
+    {
+        Console.WriteLine("Perform delete color...");
+        if (color == null)
+        {
+            fetchMessage = "No color to delete.";
+            Console.WriteLine("No color to delete.");
+            return;
+        }
+
+        try
+        {
+            var response = await Http.DeleteAsync($"http://localhost:7181/api/colors/{color.Id}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                fetchMessage = "Color deleted successfully.";
+                Console.WriteLine("Color deleted successfully.");
+                color = null;
+                confirmDelete = false;
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+                Console.WriteLine($"Error deleting color: {error}");
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+            Console.WriteLine($"Exception deleting color: {ex.Message}");
+        }
+    }
+}

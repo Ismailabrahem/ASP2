@@ -1,0 +1,30 @@
+﻿.add-review-title {
+    display: flex;
+    justify-content: center;
+}
+
+.review-img {
+    display: grid;
+    margin-top: 40px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.add-container {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+}
+
+i {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.review-submit {
+    display: grid;
+    gap: 15px;
+}

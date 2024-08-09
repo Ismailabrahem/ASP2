@@ -1,0 +1,49 @@
+﻿<link rel="stylesheet" href="ProductColor.razor.css" />
+
+
+<div class="prod-color">
+    <h3>Color</h3>
+    
+    @foreach (var color in AllColors)
+    {
+        <a @onclick="() => SelectColor(color)" class="@(GetColorClass(color)) @(SelectedColor == color ? "selected" : "") @(Colors.Contains(color) ? "" : "unavailable")"></a>
+    }
+</div>
+
+
+
+@code {
+    [Parameter]
+
+    public List<string> Colors { get; set; } = new();
+
+    [Parameter]
+    public List<string> AllColors { get; set; } = new();
+
+    [Parameter]
+    public string? SelectedColor { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnColorChanged { get; set; }
+
+    private async Task SelectColor(string color)
+    {
+        if (!Colors.Contains(color)) return;
+        SelectedColor = color;
+        await OnColorChanged.InvokeAsync(color);
+    }
+
+    private string GetColorClass(string color)
+    {
+        return color.ToLower() switch
+        {
+            "red" => "prod-red",
+            "lightblue" => "prod-lightblue",
+            "beige" => "prod-beige",
+            "darkblue" => "prod-darkblue",
+            "black" => "prod-black",
+            _ => string.Empty
+        };
+    }
+
+}

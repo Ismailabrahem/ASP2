@@ -1,0 +1,36 @@
+.nav-buttons[b-ealqqmxnis] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 5rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+a[b-ealqqmxnis] {
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h3[b-ealqqmxnis] {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+p[b-ealqqmxnis] {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+    text-align: center;
+}
+
+i[b-ealqqmxnis] {
+    margin-right: 0.5rem;
+    text-align: center;
+}

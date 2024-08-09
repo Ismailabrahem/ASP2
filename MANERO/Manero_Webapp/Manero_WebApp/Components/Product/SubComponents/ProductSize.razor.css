@@ -1,0 +1,37 @@
+﻿.prod-sizes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+.prod-sizes a {
+    opacity: 1;
+    cursor: pointer;
+    border: 2px solid #dbe3f5;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+    .prod-sizes a.selected {
+        opacity: 1;
+        cursor: pointer;
+        background-color: #dbe3f5;
+        transition: background-color 0.3s;
+    }
+
+.prod-sizes a.unavailable {
+    opacity: 0.2;
+    cursor: not-allowed;
+}

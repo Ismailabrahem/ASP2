@@ -1,0 +1,30 @@
+body[b-ih7bbfki3d] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.rating[b-ih7bbfki3d] {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+}
+
+p[b-ih7bbfki3d] {
+    margin-top: 1rem;
+}
+
+.star[b-ih7bbfki3d] {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+    .star.filled[b-ih7bbfki3d] {
+        color: gold;
+    }

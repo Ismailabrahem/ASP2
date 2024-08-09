@@ -1,0 +1,29 @@
+﻿@page "/checkout"
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config {theme: colors: {white: '#FFFFFF' black: '#111111'} {screens: {'sm': '640px', 'md': '768px', 'lg': '1024px', 'xl': '1280px', '2xl': '1536px',</script>
+
+<div class="text-center grid">
+    <div class="border-b-4 flex justify-between mt-5 font-bold">
+        <h4>My order</h4>
+        <h4>$0.00</h4>
+    </div>
+    <div class="border-b-4 bg-slate-300 font-thin">
+        <p></p>
+        <p>Discount</p>
+        <p>Delivery</p>
+    </div>
+    <div class="border-b-4">
+        <p class="font-semibold">Shipping details</p>
+        <p class="font-thin">Address</p>
+    </div>
+    <div class="border-b-4">
+        <p class="font-semibold">Payment method</p>
+        <p class="font-light">Card number</p>
+    </div>
+    <input class="border rounded-3xl grid justify-items-center mx-5 py-16 my-10" type="text" placeholder="Enter your comment" name="COMMENT">
+    <a href="/"><button class="mt-28 bg-black rounded-3xl text-white px-20 py-2">CONFIRM ORDER</button></a>
+</div>
+
+@code {
+
+}

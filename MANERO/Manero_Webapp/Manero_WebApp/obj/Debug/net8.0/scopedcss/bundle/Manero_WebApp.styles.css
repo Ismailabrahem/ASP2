@@ -1,0 +1,1431 @@
+/* _content/Manero_WebApp/Components/Cart/Pages/Order.razor.rz.scp.css */
+.products[b-z7qx0qwhgk] {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #DBE3F5;
+    margin: 1rem 0;
+}
+
+.product[b-z7qx0qwhgk] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10rem;
+    margin: 0 1rem;
+}
+
+.info-quantity[b-z7qx0qwhgk] {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity[b-z7qx0qwhgk] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.circle[b-z7qx0qwhgk] {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #DBE3F5;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 20px;
+}
+
+.sale[b-z7qx0qwhgk] {
+    position: absolute;
+    color: #FFFFFF;
+    background-color: #69864D;
+}
+
+img[b-z7qx0qwhgk] {
+    width: 8rem;
+    height: 8rem;
+}
+
+p[b-z7qx0qwhgk]{
+    margin: 0 1rem;
+}
+
+.price[b-z7qx0qwhgk]{
+    color: red;
+}
+
+.size[b-z7qx0qwhgk]{
+    margin-top: 1rem;
+}
+
+.summary[b-z7qx0qwhgk] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10rem;
+    border-bottom: 2px solid #DBE3F5;
+}
+
+.fa-check[b-z7qx0qwhgk]{
+    color: green;
+}
+
+.subtotal[b-z7qx0qwhgk], .delivery[b-z7qx0qwhgk], .discount[b-z7qx0qwhgk], .total[b-z7qx0qwhgk] {
+    font-size: 18px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtotal[b-z7qx0qwhgk], .total[b-z7qx0qwhgk]{
+    font-weight: 900;
+}
+
+.free[b-z7qx0qwhgk] {
+    color: #00824B;
+}
+
+.promocode[b-z7qx0qwhgk]{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin: 1.5rem 1.5rem;
+}
+
+.bottom[b-z7qx0qwhgk] {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 20rem;
+}
+
+.checkoutButton[b-z7qx0qwhgk]{
+    color: #ffffff;
+    background-color: black;
+    border: none;
+    border-radius: 30rem;
+    height: 4rem;
+    width: 30rem;
+}
+/* _content/Manero_WebApp/Components/DesktopHeader.razor.rz.scp.css */
+header[b-395pbrg7r4]{
+    display: none;
+}
+
+@media (min-width: 1025px) {
+
+
+    header[b-395pbrg7r4] {
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 2em;
+    }
+
+    nav ul[b-395pbrg7r4] {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    nav li[b-395pbrg7r4] {
+        margin: 0 1em;
+    }
+
+    .logo[b-395pbrg7r4]{
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    .links[b-395pbrg7r4]{
+        
+    }
+
+
+    .header-bag[b-395pbrg7r4] {
+        font-size: 25px;
+        margin-right: 5px;
+        cursor: pointer;
+        color: black;
+    }
+
+    .bag-total[b-395pbrg7r4] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: #F4303C;
+        text-align: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: 700;
+        position: absolute;
+        top: 30px;
+        right: 65px;
+    }
+
+}
+/* _content/Manero_WebApp/Components/Header.razor.rz.scp.css */
+.header-content[b-mudafottax] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    font-family: Mulish;
+}
+
+button[b-mudafottax] {
+    background: none;
+    border: 2px solid black; /* Add a border to make it visible */
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 8px; /* Add some padding for better click area */
+    color: black; /* Ensure button text is visible */
+}
+
+#show-popup[b-mudafottax] {
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+h1[b-mudafottax] {
+    padding-top: 5px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header-bars[b-mudafottax] {
+    font-size: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.header-bag[b-mudafottax] {
+    font-size: 25px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.bag-total[b-mudafottax] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #F4303C;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    top: 30px;
+    right: 27px;
+}
+
+.contact-popout[b-mudafottax] {
+    display: none; 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+    .contact-popout p[b-mudafottax]{
+        color: white;
+        padding-top: 1rem;
+        width: 9rem;
+    }
+
+    .contact-popout h2[b-mudafottax] {
+        margin-top: 6rem;
+        color: white;
+    }
+
+    .popup-content[b-mudafottax] {
+        width: 250px;
+        height: 100%;
+        padding: 20px;
+        background-color: black;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+.close-btn[b-mudafottax] {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Changed to `right` for better placement */
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: white; /* Ensure it's visible on dark background */
+}
+
+#hide-popup[b-mudafottax] {
+    color: white; /* Text color for the close button */
+    font-size: 16px;
+}
+
+@media (min-width: 1025px) {
+    header[b-mudafottax] {
+        display: none;
+    }
+}
+/* _content/Manero_WebApp/Components/Home/Pages/SubComponents/ContactPopup.razor.rz.scp.css */
+.contact-popout[b-3y0gtlcsnw] {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+    .contact-popout p[b-3y0gtlcsnw] {
+        color: white;
+        border-bottom: 1px solid white;
+    }
+
+    .contact-popout h2[b-3y0gtlcsnw] {
+        color: white;
+    }
+
+.popup-content[b-3y0gtlcsnw] {
+    width: 250px;
+    height: 100%;
+    padding: 20px;
+    background-color: black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.close-btn[b-3y0gtlcsnw] {
+    color: white;
+    position: absolute;
+    top: 12px;
+    left: 210px;
+    border: none;
+    background: none;
+    font-size: 16px;
+}
+/* _content/Manero_WebApp/Components/Home/Pages/SubComponents/Hero.razor.rz.scp.css */
+.hero[b-fg1ye4tlvz] {
+    position: relative;
+    height: 350px;
+}
+
+.hero-slideshow[b-fg1ye4tlvz] {
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-slideshow-wrapper[b-fg1ye4tlvz] {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.hero-img[b-fg1ye4tlvz] {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.slideshow-dots[b-fg1ye4tlvz] {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.dot[b-fg1ye4tlvz] {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+    .dot.active[b-fg1ye4tlvz] {
+        background-color: #717171;
+    }
+
+.hero-text[b-fg1ye4tlvz] {
+    position: absolute;
+    color: white;
+    margin: 20px;
+    top: 130px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    outline: solid 1px;
+    width: 250px;
+    padding: 5px 10px;
+}
+
+h1[b-fg1ye4tlvz], h2[b-fg1ye4tlvz] {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.btn[b-fg1ye4tlvz] {
+    display: none;
+}
+
+
+@media (min-width: 1025px) {
+    .hero[b-fg1ye4tlvz] {
+        height: 600px;
+    }
+
+    .hero-img[b-fg1ye4tlvz] {
+        height: 600px;
+    }
+    .hero-text[b-fg1ye4tlvz] {
+        position: absolute;
+        color: white;
+        margin: 20px;
+        top: 130px;
+        left: 100px;
+        background-color: rgba(0, 0, 0, 0.3);
+        outline: solid 1px;
+        width: 400px;
+        padding: 30px 30px;
+    }
+    h1[b-fg1ye4tlvz], h2[b-fg1ye4tlvz] {
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    h2[b-fg1ye4tlvz]{
+        margin-bottom: 30px;
+    }
+
+    .btn[b-fg1ye4tlvz] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #DBE3F5; 
+        font-size: 20px;
+        padding: 10px;
+    }
+}
+/* _content/Manero_WebApp/Components/Home/Pages/SubComponents/ProductCard.razor.rz.scp.css */
+.product-card[b-ahvc5c2wra] {
+    margin-left: 20px;
+}
+
+.product-img img[b-ahvc5c2wra] {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rating[b-ahvc5c2wra] {
+    margin: 5px 0;
+}
+
+.product-name[b-ahvc5c2wra] {
+    color: #626262
+}
+
+.product-price[b-ahvc5c2wra] {
+    margin-top: -10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.product-card a[b-ahvc5c2wra] {
+    text-decoration: none;
+    color: inherit;
+}
+/* _content/Manero_WebApp/Components/Home/Pages/SubComponents/ProductSideScrollBestSellers.razor.rz.scp.css */
+.product-content[b-i95zv6dg7o] {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.products-text[b-i95zv6dg7o] {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+    .products-text h2[b-i95zv6dg7o] {
+        font-weight: 700;
+    }
+
+.products-all[b-i95zv6dg7o] {
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+    .products-all a[b-i95zv6dg7o] {
+        word-spacing: 8px;
+    }
+
+    .products-all i[b-i95zv6dg7o] {
+        font-size: 14px;
+        margin-left: -8px;
+    }
+
+
+.product-list[b-i95zv6dg7o] {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+}
+
+button[b-i95zv6dg7o] {
+    border: none;
+    background-color: inherit;
+}
+/* _content/Manero_WebApp/Components/Home/Pages/SubComponents/ProductSideScrollFeatured.razor.rz.scp.css */
+.product-content[b-03wj46n0dm] {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.products-text[b-03wj46n0dm] {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+    .products-text h2[b-03wj46n0dm] {
+        font-weight: 700;
+    }
+
+.products-all[b-03wj46n0dm] {
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+    .products-all a[b-03wj46n0dm] {
+        word-spacing: 8px;
+    }
+
+    .products-all i[b-03wj46n0dm] {
+        font-size: 14px;
+        margin-left: -8px;
+    }
+
+
+.product-list[b-03wj46n0dm] {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+}
+
+button[b-03wj46n0dm] {
+    border: none;
+    background-color: inherit;
+}
+/* _content/Manero_WebApp/Components/Home/Pages/SubComponents/PromoBanner.razor.rz.scp.css */
+.promo-banner[b-ssril9dfnd] {
+    height: 150px;
+    background-image: url('/images/home/promo-banner-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+}
+
+h3[b-ssril9dfnd] {
+    padding-top: 30px;
+    padding-left: 20px;
+    color: white;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+a[b-ssril9dfnd] {
+    margin-left: 25px;
+    background-color: white;
+    padding: 15px 30px 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}
+/* _content/Manero_WebApp/Components/Layout/MainLayout.razor.rz.scp.css */
+#blazor-error-ui[b-jfimbmbcgj] {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss[b-jfimbmbcgj] {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+/* _content/Manero_WebApp/Components/Navbar.razor.rz.scp.css */
+body[b-kn6oa94ene]{
+   margin-bottom: 70px;
+}
+
+nav[b-kn6oa94ene] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    background-color: white; 
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1); 
+    z-index: 200;
+}
+
+.nav-links[b-kn6oa94ene] {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px 20px 40px;
+    width: 100%;
+}
+
+NavLink[b-kn6oa94ene] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+
+i[b-kn6oa94ene] {
+    font-size: 25px;
+    color: black;
+}
+
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes[b-kn6oa94ene]
+ .active {
+    background-color: #DBE3F5;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: content-box;
+}
+
+@media (min-width: 1025px) {
+    nav[b-kn6oa94ene] {
+        display: none;
+    }
+}
+/* _content/Manero_WebApp/Components/Product/Pages/CartView.razor.rz.scp.css */
+.cart-view[b-aayiq0kj6p] {
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+}
+
+h3[b-aayiq0kj6p] {
+    margin-bottom: 20px;
+}
+
+.cart-items[b-aayiq0kj6p] {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item[b-aayiq0kj6p] {
+    display: flex;
+    gap: 20px;
+}
+
+    .cart-item img[b-aayiq0kj6p] {
+        width: 170px;
+        height: auto;
+    }
+
+    .cart-item div[b-aayiq0kj6p] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+button[b-aayiq0kj6p] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+    button:hover[b-aayiq0kj6p] {
+        background-color: #0056b3;
+    }
+/* _content/Manero_WebApp/Components/Product/Pages/ProductDetails.razor.rz.scp.css */
+.container[b-q1xmz2sf9a] {
+
+}
+
+.product-img[b-q1xmz2sf9a] {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 1200px) {
+    .product-img img[b-q1xmz2sf9a] {
+        width: 600px;
+        height: auto;
+    }
+
+    .container[b-q1xmz2sf9a] {
+        width: 600px;
+        height: auto;
+
+    }
+
+    .detail-carousel[b-q1xmz2sf9a] {
+        display: none;
+    }
+
+    .prod-bottom-border[b-q1xmz2sf9a] {
+    }
+
+    .big-screen-details[b-q1xmz2sf9a] {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin-top: 40px;
+    }
+
+    .right-view-bscreen[b-q1xmz2sf9a] {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-img img[b-q1xmz2sf9a] {
+        width: 100%;
+        height: auto;
+    }
+
+    .prod-bottom-border[b-q1xmz2sf9a] {
+        border-bottom: 2px solid #dbe3f5;
+
+    }
+
+    .detail-carousel[b-q1xmz2sf9a] {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+}
+
+
+.product-name[b-q1xmz2sf9a] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.product-price[b-q1xmz2sf9a] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.product-size[b-q1xmz2sf9a] {
+    margin-top: 25px;
+}
+
+.product-color[b-q1xmz2sf9a] {
+    margin-top: 25px;
+}
+
+.product-description[b-q1xmz2sf9a] {
+    margin-top: 25px;
+}
+
+img[b-q1xmz2sf9a] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 15px;
+}
+
+.confirmation-message[b-q1xmz2sf9a] {
+    background-color: rgba(0, 128, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+    text-align: center;
+}
+
+    .confirmation-message.show[b-q1xmz2sf9a] {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+
+    .confirmation-message.hide[b-q1xmz2sf9a] {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+h3[b-q1xmz2sf9a] {
+    font-weight: 600;
+}
+
+/* _content/Manero_WebApp/Components/Product/SubComponents/AddToCart.razor.rz.scp.css */
+.add-cart[b-a9atdvtgxi] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.add-cart h6[b-a9atdvtgxi] {
+    margin-bottom: auto;
+}
+
+    .add-cart button[b-a9atdvtgxi] {
+        padding: 10px 20px;
+        background-color: inherit;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        opacity: 1;
+    }
+
+        .add-cart button:disabled[b-a9atdvtgxi] {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+/* _content/Manero_WebApp/Components/Product/SubComponents/AddToWishlist.razor.rz.scp.css */
+i[b-k3x6uycm9v] {
+    border: 2px solid #dbe3f5;
+    border-radius: 50%;
+    padding: 25px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #626262;
+    cursor: pointer;
+}
+
+.fa-heart[b-k3x6uycm9v] {
+    color: white;
+    transition: color 0.3s;
+}
+
+.red-border[b-k3x6uycm9v] {
+    -webkit-text-stroke: 1px red;
+}
+
+.filled-red[b-k3x6uycm9v] {
+    color: red;
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProdImgCarousel.razor.rz.scp.css */
+.detail-carousel[b-62o93g04na] {
+
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+i[b-62o93g04na] {
+    margin-bottom: 10px;
+}
+
+
+@media (min-width: 1200px) {
+    .detail-carousel[b-62o93g04na] {
+        width: 600px;
+        height: auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .detail-carousel[b-62o93g04na] {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductColor.razor.rz.scp.css */
+.prod-color[b-e1j5svxwpw] {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+    .prod-color a[b-e1j5svxwpw] {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: border 0.3s;
+    }
+
+        .prod-color a.selected[b-e1j5svxwpw] {
+            border: 3px solid #dbe3f5;
+        }
+
+.prod-color a.unavailable[b-e1j5svxwpw] {
+    opacity: 0.1;
+    cursor: not-allowed;
+}
+
+
+
+h3[b-e1j5svxwpw] {
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.prod-red[b-e1j5svxwpw] {
+    background-color: #ff6262;
+}
+
+.prod-lightblue[b-e1j5svxwpw] {
+    background-color: #63c7ff;
+}
+
+.prod-beige[b-e1j5svxwpw] {
+    background-color: #f8e7cd;
+}
+
+.prod-darkblue[b-e1j5svxwpw] {
+    background-color: #323858;
+}
+
+.prod-black[b-e1j5svxwpw] {
+    background-color: black;
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductListBest.razor.rz.scp.css */
+.product-list[b-kfy38ycy72] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+h3[b-kfy38ycy72] {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 1200px) {
+    .product-list[b-kfy38ycy72] {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+}
+
+
+
+
+@media (max-width: 800px) {
+    .product-list[b-kfy38ycy72] {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductListFeatured.razor.rz.scp.css */
+.product-list[b-u9lpc7h9m7] {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+h3[b-u9lpc7h9m7] {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 1200px) {
+    .product-list[b-u9lpc7h9m7] {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    }
+}
+
+
+
+
+@media (max-width: 800px) {
+    .product-list[b-u9lpc7h9m7] {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductName.razor.rz.scp.css */
+h3[b-quw2v3xcr1] {
+    font-weight: 800;
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductPrice.razor.rz.scp.css */
+h3[b-fif3zmw0hx] {
+    font-weight: 700;
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductQuantity.razor.rz.scp.css */
+.prod-quantity[b-s2j6diprmx] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 7.5rem;
+    height: 3rem;
+    border: 2px solid #dbe3f5;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.btn-quantity[b-s2j6diprmx] {
+    border: none;
+    background-color: white;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.btn-quantity:disabled[b-s2j6diprmx] {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.prod-quantity span[b-s2j6diprmx] {
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductRating.razor.rz.scp.css */
+body[b-ih7bbfki3d] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.rating[b-ih7bbfki3d] {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+}
+
+p[b-ih7bbfki3d] {
+    margin-top: 1rem;
+}
+
+.star[b-ih7bbfki3d] {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+    .star.filled[b-ih7bbfki3d] {
+        color: gold;
+    }
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductReview.razor.rz.scp.css */
+body[b-3xx575gmye] {
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductSize.razor.rz.scp.css */
+.prod-sizes[b-7nvyep0l5m] {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+h3[b-7nvyep0l5m] {
+    font-weight: 600;
+}
+
+.prod-sizes a[b-7nvyep0l5m] {
+    opacity: 1;
+    cursor: pointer;
+    border: 2px solid #dbe3f5;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+    .prod-sizes a.selected[b-7nvyep0l5m] {
+        opacity: 1;
+        cursor: pointer;
+        background-color: #dbe3f5;
+        transition: background-color 0.3s;
+    }
+
+.prod-sizes a.unavailable[b-7nvyep0l5m] {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+/* _content/Manero_WebApp/Components/Product/SubComponents/ProductView.razor.rz.scp.css */
+.container[b-ok8fisuq4n] {
+}
+
+
+@media (min-width: 1200px) {
+    .product-view img[b-ok8fisuq4n] {
+        width: 300px;
+        height: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-view img[b-ok8fisuq4n] {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+h3[b-ok8fisuq4n] {
+    font-size: 20px;
+    margin-top: 10px;
+}
+/* _content/Manero_WebApp/Components/Profile/Pages/EditProfile.razor.rz.scp.css */
+.profile-edit[b-i6qyaopl8f] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-input input[b-i6qyaopl8f] {
+    border: 2px solid red;
+    border-radius: 32px;
+}
+/* _content/Manero_WebApp/Components/Profile/Pages/ProfileHome.razor.rz.scp.css */
+.profile-home[b-41e4oelbvc] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-rows[b-41e4oelbvc] {
+    padding-top: 333px;
+    width: 100%;
+}
+
+.button-row[b-41e4oelbvc] {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none; 
+    color: inherit;
+}
+
+.button-icon[b-41e4oelbvc] {
+    width: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-text[b-41e4oelbvc] {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.button-arrow[b-41e4oelbvc] {
+    width: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img[b-41e4oelbvc] {
+    max-width: 100%;
+    height: auto;
+}
+
+.logoutButton[b-41e4oelbvc] {
+    width: 12rem;
+    height: 4rem;
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    border-radius: 20rem;
+    font-size: 20px;
+}
+
+.cancelButton[b-41e4oelbvc] {
+    background-color: #ffffff;
+    border: none;
+    margin-top: 10px;
+    width: 8rem;
+    height: 3rem;
+    font-size: 20px;
+}
+
+.rusure[b-41e4oelbvc] {
+    margin-top: 1rem;
+    text-align: center;
+    margin: 2rem 1rem;
+}
+/* _content/Manero_WebApp/Components/Review/Pages/AddReview.razor.rz.scp.css */
+.add-review-title[b-vd1er19la5] {
+    display: flex;
+    justify-content: center;
+}
+
+.review-img[b-vd1er19la5] {
+    display: grid;
+    margin-top: 40px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.add-container[b-vd1er19la5] {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+}
+
+i[b-vd1er19la5] {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.review-submit[b-vd1er19la5] {
+    display: grid;
+    gap: 15px;
+}
+/* _content/Manero_WebApp/Components/Review/Pages/Reviews.razor.rz.scp.css */
+.review-header[b-fzgq7y8y7d] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 61%;
+}
+
+.review-list[b-fzgq7y8y7d] {
+    border-bottom: 2px solid #dbe3f5;
+
+}
+/* _content/Manero_WebApp/Components/Review/SubComponents/ReviewCard.razor.rz.scp.css */
+.content[b-nam9egjqmx] {
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.user-img[b-nam9egjqmx] {
+    width: 100px;
+    height: auto;
+}
+
+.user-img img[b-nam9egjqmx] {
+    height: 60px;
+    width: auto;
+    background-color: white;
+    color: white;
+}
+
+.review-content[b-nam9egjqmx] {
+    width: 400px;
+}
+
+.review-header[b-nam9egjqmx] {
+    display: flex;
+    justify-content: space-between;
+    height: 17%;
+}
+
+    .review-header h3[b-nam9egjqmx] {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .review-text .date[b-nam9egjqmx] {
+        font-size: 12px;
+        font-weight: 200;
+        margin-top: 0;
+    }
+/* _content/Manero_WebApp/Components/Welcome/Pages/GetStarted.razor.rz.scp.css */
+.start[b-ob33vu6ilv] {
+    background-color: #DBE3F5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.content[b-ob33vu6ilv] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 7vh;
+    z-index: 1;
+}
+
+.pagination-circles[b-ob33vu6ilv] {
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.circle[b-ob33vu6ilv] {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+    .circle.active[b-ob33vu6ilv] {
+        width: 30px;
+        height: 15px;
+        border-radius: 10px;
+        border: 3px solid black;
+        background-color: white;
+    }
+
+.big-manero-ring[b-ob33vu6ilv] {
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.manero-ring[b-ob33vu6ilv] {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .big-manero-ring[b-ob33vu6ilv] {
+        display: none;
+    }
+
+    .manero-ring[b-ob33vu6ilv] {
+
+    }
+
+}
+
+.getstarted-title[b-ob33vu6ilv] {
+    font-size: 2.2rem;
+    z-index: 2;
+}
+
+.welcome-text[b-ob33vu6ilv] {
+    font-size: 1rem;
+    text-align: center;
+    color: gray;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 2;
+}
+
+.btn-main[b-ob33vu6ilv] {
+    background-color: black !important;
+    color: white !important;
+    padding: 10px;
+    border-radius: 32px;
+}
+
+.get-started-btn[b-ob33vu6ilv] {
+    width: 80%;
+    height: 50px;
+    z-index: 2;
+}
+/* _content/Manero_WebApp/Components/Welcome/Pages/Welcome.razor.rz.scp.css */
+.welcome[b-43fi9igf3b] {
+    background-color: #DBE3F5;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.manero-ring[b-43fi9igf3b] {
+    z-index: 0;
+    position: absolute;
+}
+
+.welcome-title[b-43fi9igf3b] {
+    position: relative;
+    z-index: 1;
+    font-size: 2.2rem;
+}

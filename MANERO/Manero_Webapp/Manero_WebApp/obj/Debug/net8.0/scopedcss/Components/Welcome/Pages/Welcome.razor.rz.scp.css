@@ -1,0 +1,19 @@
+.welcome[b-43fi9igf3b] {
+    background-color: #DBE3F5;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.manero-ring[b-43fi9igf3b] {
+    z-index: 0;
+    position: absolute;
+}
+
+.welcome-title[b-43fi9igf3b] {
+    position: relative;
+    z-index: 1;
+    font-size: 2.2rem;
+}

@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Manero_Webapp\\Manero_WebApp.Client\\obj\\Debug\\net8.0\\compressed\\kypc2by5mu.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Manero_WebApp.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Manero_WebApp.Client.props",
+      "PackagePath": "build\\Manero_WebApp.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Manero_WebApp.Client.props",
+      "PackagePath": "buildMultiTargeting\\Manero_WebApp.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Manero_WebApp.Client.props",
+      "PackagePath": "buildTransitive\\Manero_WebApp.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

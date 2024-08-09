@@ -1,0 +1,84 @@
+﻿@page "/profile/edit"
+@rendermode InteractiveServer
+@using Manero_WebApp.Components.Layout
+@layout WelcomeLayout
+
+
+<PageTitle>Edit Profile</PageTitle>
+
+
+<section class="profile-edit">
+    <header class="profile-header">
+        <h1>Edit Profile</h1>
+    </header>
+    <div class="container">
+        <EditForm Model="Form" OnSubmit="Submit" FormName="EditProfile">
+            <div class="form-group">
+                <label class="form-label" for="Form.FirstName">First Name</label>
+                <InputText class="form-input" id="Form.FirstName" @bind-Value="Form.FirstName"></InputText>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Form.LastName">Last Name</label>
+                <InputText class="form-input" id="Form.LastName" @bind-Value="Form.LastName"></InputText>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Form.Email">Email</label>
+                <InputText class="form-input" id="Form.Email" @bind-Value="Form.Email"></InputText>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Form.PhoneNumber">Phone Number</label>
+                <InputText class="form-input" id="Form.PhoneNumber" @bind-Value="Form.PhoneNumber"></InputText>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="Form.ProfileImage">PlaceHolderProfileImage</label>
+                <InputFile class="form-input" id="Form.ProfileImage" @bind-Value="Form.ProfileImage"></InputFile>
+            </div>
+
+            <div class="form-button">
+                <button class="save-button" type="submit">Save Changes</button>
+            </div>
+        </EditForm>
+    </div>
+</section>
+<div>
+    @StatusMessage
+</div>
+
+<img id="profileImage" />
+
+<script>
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const file = e.target['file'].files[0]
+
+        const formData = new FormData()
+        formData.append('file', file);
+
+        const res = await fetch('http://localhost:7050/api/FileUploader', {
+            method: 'post',
+            body: formData
+        })
+
+        if (res.status === 200) {
+            let data = await res.text()
+            data = data.replace(/^"|"$/g, '');
+            console.log(data)
+            
+            const element = document.querySelector("#profileImage")
+            element.src = data
+        }
+    }
+</script>
+
+@code {
+    private string StatusMessage = "";
+    private EditProfileForm Form = new();
+
+    private void Submit()
+    {
+        StatusMessage = "Changes Successfully Saved!";
+    }
+}

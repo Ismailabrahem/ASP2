@@ -1,0 +1,8 @@
+﻿<link rel="stylesheet" href="ProductPrice.razor.css" />
+
+<h3>@Price.ToString("C")</h3>
+
+@code {
+    [Parameter]
+    public decimal Price { get; set; }
+}

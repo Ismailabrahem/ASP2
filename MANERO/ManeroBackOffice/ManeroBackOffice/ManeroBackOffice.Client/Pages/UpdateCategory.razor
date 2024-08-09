@@ -1,0 +1,123 @@
+﻿@page "/updatecategory"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>Update Category</h3>
+
+<div class="form-group">
+    <label for="categoryId">Category ID</label>
+    <InputText id="categoryId" class="form-control" @bind-Value="categoryId" />
+</div>
+<button class="btn btn-primary" style="margin-top: 1rem;" @onclick="FetchCategory">Fetch Category</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (category != null)
+{
+    <EditForm Model="@category" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="categoryName">Category Name</label>
+            <InputText id="categoryName" class="form-control" @bind-Value="category.CategoryName" />
+        </div>
+        <div class="form-group">
+            <label for="subCategories">Subcategories (comma separated)</label>
+            <InputText id="subCategories" class="form-control" @bind-Value="subCategories" />
+        </div>
+
+        <button type="submit" style="margin-top: 1rem;" class="btn btn-primary">Update</button>
+    </EditForm>
+}
+
+@code {
+    private string categoryId = string.Empty;
+    private CategoryModel? category = null;
+    private string subCategories = string.Empty;
+    private string fetchMessage = string.Empty;
+
+    private async Task FetchCategory()
+    {
+        fetchMessage = "Fetching category...";
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/categories/{categoryId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var categoryJson = await response.Content.ReadAsStringAsync();
+                category = JsonSerializer.Deserialize<CategoryModel>(categoryJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (category != null)
+                {
+                    subCategories = string.Join(", ", category.SubCategories);
+                    fetchMessage = "Category details fetched successfully. You can now update the category.";
+                }
+                else
+                {
+                    fetchMessage = "Failed to fetch category details.";
+                }
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                fetchMessage = "No category found. Please try again.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (category == null)
+        {
+            fetchMessage = "No category to update.";
+            return;
+        }
+
+        try
+        {
+            category.SubCategories = subCategories.Split(',').Select(c => c.Trim()).ToList();
+            var jsonCategory = JsonSerializer.Serialize(category);
+            var content = new StringContent(jsonCategory, System.Text.Encoding.UTF8, "application/json");
+
+            Console.WriteLine($"Updating category with ID {category.Id}: {jsonCategory}");
+
+            var response = await Http.PutAsync($"http://localhost:7181/api/categories/{category.Id}?", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                fetchMessage = "Category updated successfully.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+                Console.WriteLine($"Error updating category: {error}");
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+            Console.WriteLine($"Exception updating category: {ex.Message}");
+        }
+    }
+}

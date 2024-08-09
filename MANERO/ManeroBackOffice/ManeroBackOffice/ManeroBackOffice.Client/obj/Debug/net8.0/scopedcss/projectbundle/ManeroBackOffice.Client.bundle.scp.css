@@ -1,0 +1,154 @@
+/* /Pages/CategoriesMenu.razor.rz.scp.css */
+.nav-buttons[b-9h0ux7hj6b] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 5rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+a[b-9h0ux7hj6b] {
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h3[b-9h0ux7hj6b] {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+p[b-9h0ux7hj6b] {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+    text-align: center;
+}
+
+i[b-9h0ux7hj6b] {
+    margin-right: 0.5rem;
+    text-align: center;
+}
+/* /Pages/ColorsMenu.razor.rz.scp.css */
+.nav-buttons[b-mt1887lrw5] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 5rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+a[b-mt1887lrw5] {
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h3[b-mt1887lrw5] {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+p[b-mt1887lrw5] {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+    text-align: center;
+}
+
+i[b-mt1887lrw5] {
+    margin-right: 0.5rem;
+    text-align: center;
+}
+/* /Pages/CreateProduct.razor.rz.scp.css */
+.submit-button[b-hl68ptkldk]{
+    display: flex;
+    flex-direction: column; 
+    margin-top: 2rem
+}
+/* /Pages/ProductsMenu.razor.rz.scp.css */
+.nav-buttons[b-xcz0pn1o3d] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 5rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+a[b-xcz0pn1o3d] {
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h3[b-xcz0pn1o3d] {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+p[b-xcz0pn1o3d] {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+    text-align: center;
+}
+
+i[b-xcz0pn1o3d] {
+    margin-right: 0.5rem;
+    text-align: center;
+}
+/* /Pages/SizesMenu.razor.rz.scp.css */
+.nav-buttons[b-ealqqmxnis] {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 5rem;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+a[b-ealqqmxnis] {
+    padding: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h3[b-ealqqmxnis] {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+}
+
+p[b-ealqqmxnis] {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+    text-align: center;
+}
+
+i[b-ealqqmxnis] {
+    margin-right: 0.5rem;
+    text-align: center;
+}

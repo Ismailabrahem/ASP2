@@ -1,0 +1,31 @@
+﻿
+<link rel="stylesheet" href="ProductQuantity.razor.css" />
+
+<div class="prod-quantity">
+    <button class="btn-quantity" @onclick="DecreaseQuantity" ><i class="fa-regular fa-minus fa-2xs"></i></button>
+    <span> @Quantity</span>
+    <button class="btn-quantity" @onclick="IncreaseQuantity" ><i class="fa-regular fa-plus fa-2xs"></i></button>
+</div>
+
+@code {
+    [Parameter]
+    public int Quantity { get; set; }
+
+    [Parameter]
+    public EventCallback<int> QuantityChanged { get; set; }
+
+    private async Task DecreaseQuantity()
+    {
+        if (Quantity > 1)
+        {
+            Quantity--;
+            await QuantityChanged.InvokeAsync(Quantity);
+        }
+    }
+
+    private async Task IncreaseQuantity()
+    {
+        Quantity++;
+        await QuantityChanged.InvokeAsync(Quantity);
+    }
+}

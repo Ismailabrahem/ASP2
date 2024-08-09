@@ -1,0 +1,135 @@
+﻿@page "/profile"
+@rendermode InteractiveServer
+@using Manero_WebApp.Components.Layout
+@using Manero_WebApp.Data
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Authorization
+@using Manero_WebApp.Components.Profile.Pages
+@inject NavigationManager NavigationManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@layout MainLayout
+
+<PageTitle>Your Profile</PageTitle>
+
+<section class="profile-home">
+    <div class="profile-info">
+        @if (user != null)
+        {
+            <p>placeholder profile pic</p>
+            <h3>@user.FirstName @user.LastName</h3>
+            <p>@user.Email</p>
+        }
+        else
+        {
+            <p>Loading...</p>
+        }
+    </div>
+    <div class="profile-rows">
+        <a class="button-row" href="/welcome">
+            <div class="button-icon">
+                <img src="/images/profile/calendar.svg" />
+            </div>
+            <div class="button-text">
+                <p>Order History</p>
+            </div>
+            <div class="button-arrow">
+                <img src="/images/profile/small_arrow.svg" />
+            </div>
+        </a>
+
+        <a class="button-row" href="/profile/payment">
+            <div class="button-icon">
+                <img src="/images/profile/card.svg" />
+            </div>
+            <div class="button-text">
+                <p>Payment Method</p>
+            </div>
+            <div class="button-arrow">
+                <img src="/images/profile/small_arrow.svg" />
+            </div>
+        </a>
+
+        <div class="button-row">
+            <div class="button-icon">
+                <img src="/images/profile/map_pin.svg" />
+            </div>
+            <div class="button-text">
+                <p>My Address</p>
+            </div>
+            <div class="button-arrow">
+                <img src="/images/profile/small_arrow.svg" />
+            </div>
+        </div>
+
+        <div class="button-row">
+            <div class="button-icon">
+                <img src="/images/profile/gift.svg" />
+            </div>
+            <div class="button-text">
+                <p>My Promocodes</p>
+            </div>
+            <div class="button-arrow">
+                <img src="/images/profile/small_arrow.svg" />
+            </div>
+        </div>
+
+        <div class="button-row" @onclick="ShowModal">
+            <div class="button-icon">
+                <img src="/images/profile/log_out.svg" />
+            </div>
+            <div class="button-text">
+                <p>Sign Out</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<SignOutPopup IsVisible="isModalVisible" IsVisibleChanged="OnModalVisibilityChanged">
+    <h1 class="rusure">Are you sure you want to sign out?</h1>
+    <form action="/Logout" method="post">
+        <button class="logoutButton" type="submit">
+            <span aria-hidden="true"></span> SURE
+        </button>
+    </form>
+    <button class="cancelButton" @onclick="CloseModal">CANCEL</button>
+</SignOutPopup>
+
+@code {
+    private ApplicationUser user;
+
+    #region PopUp
+
+    private bool isModalVisible = false;
+
+    private void ShowModal()
+    {
+        isModalVisible = true;
+    }
+
+    private void CloseModal()
+    {
+        isModalVisible = false;
+    }
+
+    private void OnModalVisibilityChanged(bool value)
+    {
+        isModalVisible = value;
+    }
+
+    #endregion
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var userPrincipal = authState.User;
+
+        if (SignInManager.IsSignedIn(userPrincipal))
+        {
+            user = await UserManager.GetUserAsync(userPrincipal);
+        }
+    }
+}

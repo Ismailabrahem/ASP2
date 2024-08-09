@@ -1,0 +1,125 @@
+﻿@page "/deletesize"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>Delete Size</h3>
+
+<div class="form-group">
+    <label for="sizeId">Size ID</label>
+    <InputText id="sizeId" class="form-control" @bind-Value="sizeId" />
+</div>
+<button class="btn btn-primary" @onclick="FetchSize" style="margin-top: 1rem;">Fetch Size</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (size != null)
+{
+    <div class="mt-4">
+        <h4>Size Details</h4>
+        <div><strong>Size Name:</strong> @size.SizeName</div>
+
+        <button class="btn btn-danger mt-3" @onclick="ConfirmDelete">Delete Size</button>
+    </div>
+}
+
+@if (confirmDelete)
+{
+    <div class="alert alert-danger mt-3">
+        Are you sure you want to delete this size?
+        <button class="btn btn-danger ml-2" @onclick="PerformDeleteSize">Yes</button>
+        <button class="btn btn-secondary ml-2" @onclick="CancelDelete">No</button>
+    </div>
+}
+
+@code {
+    private string sizeId = string.Empty;
+    private SizeModel? size = null;
+    private string fetchMessage = string.Empty;
+    private bool confirmDelete = false;
+
+    private async Task FetchSize()
+    {
+        fetchMessage = "Fetching size...";
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/sizes/{sizeId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var sizeJson = await response.Content.ReadAsStringAsync();
+                size = JsonSerializer.Deserialize<SizeModel>(sizeJson, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                if (size != null)
+                {
+                    fetchMessage = "Size details fetched successfully. You can now delete the size.";
+                }
+                else
+                {
+                    fetchMessage = "Failed to fetch size details.";
+                }
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                fetchMessage = "No size found. Please try again.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+
+    private void ConfirmDelete()
+    {
+        confirmDelete = true;
+    }
+
+    private void CancelDelete()
+    {
+        confirmDelete = false;
+    }
+
+    private async Task PerformDeleteSize()
+    {
+        if (size == null)
+        {
+            fetchMessage = "No size to delete.";
+            return;
+        }
+
+        try
+        {
+            var response = await Http.DeleteAsync($"http://localhost:7181/api/sizes/{sizeId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                fetchMessage = "Size deleted successfully.";
+                size = null;
+                confirmDelete = false;
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                fetchMessage = $"Error: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+}

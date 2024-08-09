@@ -1,0 +1,119 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = ManeroBackOffice.Client
+build_property.RootNamespace = ManeroBackOffice.Client
+build_property.ProjectDir = C:\Users\PC\Desktop\ManeroBackOffice\ManeroBackOffice\ManeroBackOffice.Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\PC\Desktop\ManeroBackOffice\ManeroBackOffice\ManeroBackOffice.Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/CreateCategory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQ2F0ZWdvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/CreateColor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlQ29sb3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/CreateFile.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlRmlsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/CreateSize.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlU2l6ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/DeleteCategory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlQ2F0ZWdvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/DeleteColor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlQ29sb3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/DeleteProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/DeleteSize.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlU2l6ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/FilesMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsZXNNZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/UpdateCategory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlQ2F0ZWdvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/UpdateColor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlQ29sb3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/UpdateProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/UpdateSize.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlU2l6ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/ViewCategory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld0NhdGVnb3J5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/ViewColor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld0NvbG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/ViewProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld1Byb2R1Y3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/ViewSize.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlld1NpemUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVkaXJlY3RUb0xvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/CategoriesMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc01lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-9h0ux7hj6b
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/ColorsMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29sb3JzTWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-mt1887lrw5
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/CreateProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-hl68ptkldk
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/ProductsMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNNZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-xcz0pn1o3d
+
+[C:/Users/PC/Desktop/ManeroBackOffice/ManeroBackOffice/ManeroBackOffice.Client/Pages/SizesMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2l6ZXNNZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-ealqqmxnis

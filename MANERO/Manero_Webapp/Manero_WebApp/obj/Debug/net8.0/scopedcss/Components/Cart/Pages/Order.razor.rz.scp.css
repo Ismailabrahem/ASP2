@@ -1,0 +1,118 @@
+.products[b-z7qx0qwhgk] {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #DBE3F5;
+    margin: 1rem 0;
+}
+
+.product[b-z7qx0qwhgk] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10rem;
+    margin: 0 1rem;
+}
+
+.info-quantity[b-z7qx0qwhgk] {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity[b-z7qx0qwhgk] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.circle[b-z7qx0qwhgk] {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #DBE3F5;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 20px;
+}
+
+.sale[b-z7qx0qwhgk] {
+    position: absolute;
+    color: #FFFFFF;
+    background-color: #69864D;
+}
+
+img[b-z7qx0qwhgk] {
+    width: 8rem;
+    height: 8rem;
+}
+
+p[b-z7qx0qwhgk]{
+    margin: 0 1rem;
+}
+
+.price[b-z7qx0qwhgk]{
+    color: red;
+}
+
+.size[b-z7qx0qwhgk]{
+    margin-top: 1rem;
+}
+
+.summary[b-z7qx0qwhgk] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10rem;
+    border-bottom: 2px solid #DBE3F5;
+}
+
+.fa-check[b-z7qx0qwhgk]{
+    color: green;
+}
+
+.subtotal[b-z7qx0qwhgk], .delivery[b-z7qx0qwhgk], .discount[b-z7qx0qwhgk], .total[b-z7qx0qwhgk] {
+    font-size: 18px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtotal[b-z7qx0qwhgk], .total[b-z7qx0qwhgk]{
+    font-weight: 900;
+}
+
+.free[b-z7qx0qwhgk] {
+    color: #00824B;
+}
+
+.promocode[b-z7qx0qwhgk]{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin: 1.5rem 1.5rem;
+}
+
+.bottom[b-z7qx0qwhgk] {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 20rem;
+}
+
+.checkoutButton[b-z7qx0qwhgk]{
+    color: #ffffff;
+    background-color: black;
+    border: none;
+    border-radius: 30rem;
+    height: 4rem;
+    width: 30rem;
+}

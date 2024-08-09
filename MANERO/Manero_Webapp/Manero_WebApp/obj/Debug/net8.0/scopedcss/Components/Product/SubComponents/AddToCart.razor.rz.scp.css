@@ -1,0 +1,29 @@
+.add-cart[b-a9atdvtgxi] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.add-cart h6[b-a9atdvtgxi] {
+    margin-bottom: auto;
+}
+
+    .add-cart button[b-a9atdvtgxi] {
+        padding: 10px 20px;
+        background-color: inherit;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        opacity: 1;
+    }
+
+        .add-cart button:disabled[b-a9atdvtgxi] {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }

@@ -1,0 +1,38 @@
+﻿@using Manero_WebApp.Components.Layout
+@using Manero_WebApp.Data
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Authorization
+@using Manero_WebApp.Components.Profile.Pages
+@inject NavigationManager NavigationManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@layout MainLayout
+
+<header>
+    <div class="logo">
+        <NavLink href="/" class="nav-link logo" active-class="active">MANERO</NavLink>
+    </div>
+    <nav>
+        <ul>
+            <li><NavLink href="/producthome" class="nav-link links" active-class="active">Shop</NavLink></li>
+            <li><NavLink href="/contact" class="nav-link links" active-class="active">Contact</NavLink></li>
+            @if (user != null)
+            {
+            <li><NavLink href="/profile" class="nav-link links" active-class="active">Account</NavLink></li>
+            }
+            else
+            {
+            <li><NavLink href="/account/login" class="nav-link links" active-class="active">Account</NavLink></li>
+            }
+
+            <li><NavLink href="/cart"><i class="fa-regular fa-bag-shopping header-bag"></i></NavLink></li>
+        </ul>
+        <div class="bag-total">$0</div>
+    </nav>
+</header>
+@code {
+     private ApplicationUser user;
+}

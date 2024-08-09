@@ -1,0 +1,11 @@
+﻿.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 61%;
+}
+
+.review-list {
+    border-bottom: 2px solid #dbe3f5;
+
+}

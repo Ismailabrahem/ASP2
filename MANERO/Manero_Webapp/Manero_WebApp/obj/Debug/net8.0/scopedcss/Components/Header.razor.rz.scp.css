@@ -1,0 +1,111 @@
+.header-content[b-mudafottax] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    font-family: Mulish;
+}
+
+button[b-mudafottax] {
+    background: none;
+    border: 2px solid black; /* Add a border to make it visible */
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 8px; /* Add some padding for better click area */
+    color: black; /* Ensure button text is visible */
+}
+
+#show-popup[b-mudafottax] {
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+h1[b-mudafottax] {
+    padding-top: 5px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.header-bars[b-mudafottax] {
+    font-size: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.header-bag[b-mudafottax] {
+    font-size: 25px;
+    margin-right: 5px;
+    cursor: pointer;
+    color: black;
+}
+
+.bag-total[b-mudafottax] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #F4303C;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    position: absolute;
+    top: 30px;
+    right: 27px;
+}
+
+.contact-popout[b-mudafottax] {
+    display: none; 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5); 
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+
+    .contact-popout p[b-mudafottax]{
+        color: white;
+        padding-top: 1rem;
+        width: 9rem;
+    }
+
+    .contact-popout h2[b-mudafottax] {
+        margin-top: 6rem;
+        color: white;
+    }
+
+    .popup-content[b-mudafottax] {
+        width: 250px;
+        height: 100%;
+        padding: 20px;
+        background-color: black;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+.close-btn[b-mudafottax] {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Changed to `right` for better placement */
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: white; /* Ensure it's visible on dark background */
+}
+
+#hide-popup[b-mudafottax] {
+    color: white; /* Text color for the close button */
+    font-size: 16px;
+}
+
+@media (min-width: 1025px) {
+    header[b-mudafottax] {
+        display: none;
+    }
+}

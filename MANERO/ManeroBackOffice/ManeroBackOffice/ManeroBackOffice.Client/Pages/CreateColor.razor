@@ -1,0 +1,55 @@
+﻿@page "/createcolor"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<EditForm Model="@color" OnValidSubmit="HandleValidSubmit" FormName="createColorForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <h3>Create Color</h3>
+    <p>Please fill in the form to create a color and add it to the database</p>
+    <div class="form-group">
+        <label for="colorName">Color Name</label>
+        <InputText id="colorName" class="form-control" @bind-Value="color.ColorName" />
+    </div>
+    <div class="submit-button">
+        <button type="submit" class="btn btn-success">Create</button>
+    </div>
+</EditForm>
+
+@if (colorCreatedSuccessfully)
+{
+    <div class="alert alert-success mt-3">
+        Color created successfully.
+    </div>
+}
+
+@code {
+    private ColorModel color = new ColorModel();
+    private bool colorCreatedSuccessfully = false;
+
+    private async Task HandleValidSubmit()
+    {
+        var jsonColor = JsonSerializer.Serialize(color);
+        var content = new StringContent(jsonColor, System.Text.Encoding.UTF8, "application/json");
+
+        var response = await Http.PostAsync("http://localhost:7181/api/CreateColor", content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            colorCreatedSuccessfully = true;
+            color = new ColorModel();
+        }
+        else
+        {
+            var error = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(error);
+        }
+    }
+}

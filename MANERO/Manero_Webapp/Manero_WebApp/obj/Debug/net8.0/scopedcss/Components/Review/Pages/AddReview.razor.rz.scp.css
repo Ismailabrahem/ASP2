@@ -1,0 +1,30 @@
+.add-review-title[b-vd1er19la5] {
+    display: flex;
+    justify-content: center;
+}
+
+.review-img[b-vd1er19la5] {
+    display: grid;
+    margin-top: 40px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.add-container[b-vd1er19la5] {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    position: relative;
+}
+
+i[b-vd1er19la5] {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.review-submit[b-vd1er19la5] {
+    display: grid;
+    gap: 15px;
+}

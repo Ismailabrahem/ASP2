@@ -1,0 +1,79 @@
+﻿@page "/findcategory"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>View Category</h3>
+
+<div class="form-group">
+    <label for="categoryId">Category ID</label>
+    <InputText id="categoryId" class="form-control" @bind-Value="categoryId" />
+</div>
+<button class="btn btn-primary" style="margin-top: 1rem;" @onclick="FetchCategory">Search</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (categoryJson != null)
+{
+    <div class="mt-4">
+        <h4>Category JSON</h4>
+        <pre>@categoryJson</pre>
+    </div>
+}
+
+@code {
+    private string categoryId = string.Empty;
+    private string? categoryJson = null;
+    private string fetchMessage = string.Empty;
+
+    private async Task FetchCategory()
+    {
+        if (string.IsNullOrWhiteSpace(categoryId))
+        {
+            fetchMessage = "Category ID cannot be empty.";
+            categoryJson = null;
+            return;
+        }
+
+        fetchMessage = "Fetching category...";
+        categoryJson = null;
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/categories/{categoryId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var category = await response.Content.ReadAsStringAsync();
+                categoryJson = "Here is the requested category:\n\n" + JsonSerializer.Serialize(JsonDocument.Parse(category), new JsonSerializerOptions { WriteIndented = true });
+                fetchMessage = "Category fetched successfully.";
+                Console.WriteLine("Category fetched successfully");
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                Console.WriteLine("No category found. Please try again.");
+                fetchMessage = "No category found. Please try again.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error response: {error}");
+                fetchMessage = $"Something went wrong: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+}

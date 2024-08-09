@@ -1,0 +1,79 @@
+﻿@page "/findcolor"
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using ManeroBackOffice.Models
+@using Microsoft.AspNetCore.Authorization
+
+<h3>View Color</h3>
+
+<div class="form-group">
+    <label for="colorId">Color ID</label>
+    <InputText id="colorId" class="form-control" @bind-Value="colorId" />
+</div>
+<button class="btn btn-primary" style="margin-top: 1rem;" @onclick="FetchColor">Search</button>
+
+@if (!string.IsNullOrEmpty(fetchMessage))
+{
+    <div class="alert alert-info mt-3">
+        @fetchMessage
+    </div>
+}
+
+@if (colorJson != null)
+{
+    <div class="mt-4">
+        <h4>Color JSON</h4>
+        <pre>@colorJson</pre>
+    </div>
+}
+
+@code {
+    private string colorId = string.Empty;
+    private string? colorJson = null;
+    private string fetchMessage = string.Empty;
+
+    private async Task FetchColor()
+    {
+        if (string.IsNullOrWhiteSpace(colorId))
+        {
+            fetchMessage = "Color ID cannot be empty.";
+            colorJson = null;
+            return;
+        }
+
+        fetchMessage = "Fetching color...";
+        colorJson = null;
+        try
+        {
+            var response = await Http.GetAsync($"http://localhost:7181/api/colors/{colorId}?");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var color = await response.Content.ReadAsStringAsync();
+                colorJson = "Here is the requested color:\n\n" + JsonSerializer.Serialize(JsonDocument.Parse(color), new JsonSerializerOptions { WriteIndented = true });
+                fetchMessage = "Color fetched successfully.";
+                Console.WriteLine("Color fetched successfully");
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+            {
+                Console.WriteLine("No color found. Please try again.");
+                fetchMessage = "No color found. Please try again.";
+            }
+            else
+            {
+                var error = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error response: {error}");
+                fetchMessage = $"Something went wrong: {error}";
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+            fetchMessage = $"Exception: {ex.Message}";
+        }
+    }
+}

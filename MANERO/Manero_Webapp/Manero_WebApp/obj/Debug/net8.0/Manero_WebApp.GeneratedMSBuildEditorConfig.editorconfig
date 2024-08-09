@@ -1,0 +1,339 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Manero_WebApp
+build_property.RootNamespace = Manero_WebApp
+build_property.ProjectDir = C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\PC\Desktop\Manero_Webapp\Manero_WebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/AccessDenied.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEFjY2Vzc0RlbmllZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/ConfirmEmail.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXENvbmZpcm1FbWFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/ConfirmEmailChange.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXENvbmZpcm1FbWFpbENoYW5nZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/ExternalLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEV4dGVybmFsTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/ForgotPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEZvcmdvdFBhc3N3b3JkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/ForgotPasswordConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEZvcmdvdFBhc3N3b3JkQ29uZmlybWF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/InvalidPasswordReset.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEludmFsaWRQYXNzd29yZFJlc2V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/InvalidUser.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXEludmFsaWRVc2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Lockout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXExvY2tvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXExvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/LoginWith2fa.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXExvZ2luV2l0aDJmYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/LoginWithRecoveryCode.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXExvZ2luV2l0aFJlY292ZXJ5Q29kZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/ChangePassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxDaGFuZ2VQYXNzd29yZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/DeletePersonalData.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxEZWxldGVQZXJzb25hbERhdGEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/Disable2fa.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxEaXNhYmxlMmZhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/Email.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxFbWFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/EnableAuthenticator.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxFbmFibGVBdXRoZW50aWNhdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/ExternalLogins.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxFeHRlcm5hbExvZ2lucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/GenerateRecoveryCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxHZW5lcmF0ZVJlY292ZXJ5Q29kZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/PersonalData.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxQZXJzb25hbERhdGEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/ResetAuthenticator.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxSZXNldEF1dGhlbnRpY2F0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/SetPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxTZXRQYXNzd29yZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/TwoFactorAuthentication.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxUd29GYWN0b3JBdXRoZW50aWNhdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Manage/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXE1hbmFnZVxfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlZ2lzdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/RegisterConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlZ2lzdGVyQ29uZmlybWF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/ResendEmailConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlc2VuZEVtYWlsQ29uZmlybWF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/ResetPassword.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlc2V0UGFzc3dvcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/ResetPasswordConfirmation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXFJlc2V0UGFzc3dvcmRDb25maXJtYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Pages/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFBhZ2VzXF9JbXBvcnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Shared/AccountLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxBY2NvdW50TGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Shared/ExternalLoginPicker.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxFeHRlcm5hbExvZ2luUGlja2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Shared/ManageLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxNYW5hZ2VMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Shared/ManageNavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxNYW5hZ2VOYXZNZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Shared/ShowRecoveryCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxTaG93UmVjb3ZlcnlDb2Rlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Account/Shared/StatusMessage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY2NvdW50XFNoYXJlZFxTdGF0dXNNZXNzYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Cart/Pages/CartEmpty.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXJ0XFBhZ2VzXENhcnRFbXB0eS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Checkout/Pages/Checkout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDaGVja291dFxQYWdlc1xDaGVja291dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Home/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFBhZ2VzXEhvbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Layout/WelcomeLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcV2VsY29tZUxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Profile/Pages/PaymentMethod.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9maWxlXFBhZ2VzXFBheW1lbnRNZXRob2QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Profile/Pages/SignOutPopup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9maWxlXFBhZ2VzXFNpZ25PdXRQb3B1cC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Cart/Pages/Order.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYXJ0XFBhZ2VzXE9yZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-z7qx0qwhgk
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/DesktopHeader.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEZXNrdG9wSGVhZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-395pbrg7r4
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIZWFkZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-mudafottax
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Home/Pages/SubComponents/ContactPopup.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFBhZ2VzXFN1YkNvbXBvbmVudHNcQ29udGFjdFBvcHVwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-3y0gtlcsnw
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Home/Pages/SubComponents/Hero.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFBhZ2VzXFN1YkNvbXBvbmVudHNcSGVyby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-fg1ye4tlvz
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Home/Pages/SubComponents/ProductCard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFBhZ2VzXFN1YkNvbXBvbmVudHNcUHJvZHVjdENhcmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ahvc5c2wra
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Home/Pages/SubComponents/ProductSideScrollBestSellers.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFBhZ2VzXFN1YkNvbXBvbmVudHNcUHJvZHVjdFNpZGVTY3JvbGxCZXN0U2VsbGVycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-i95zv6dg7o
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Home/Pages/SubComponents/ProductSideScrollFeatured.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFBhZ2VzXFN1YkNvbXBvbmVudHNcUHJvZHVjdFNpZGVTY3JvbGxGZWF0dXJlZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-03wj46n0dm
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Home/Pages/SubComponents/PromoBanner.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xIb21lXFBhZ2VzXFN1YkNvbXBvbmVudHNcUHJvbW9CYW5uZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ssril9dfnd
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-jfimbmbcgj
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Navbar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xOYXZiYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kn6oa94ene
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/Pages/CartView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFBhZ2VzXENhcnRWaWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-aayiq0kj6p
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/Pages/ProductDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFBhZ2VzXFByb2R1Y3REZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-q1xmz2sf9a
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/AddToCart.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcQWRkVG9DYXJ0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-a9atdvtgxi
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/AddToWishlist.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcQWRkVG9XaXNobGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-k3x6uycm9v
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProdImgCarousel.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZEltZ0Nhcm91c2VsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-62o93g04na
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductColor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdENvbG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-e1j5svxwpw
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductListBest.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdExpc3RCZXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-kfy38ycy72
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductListFeatured.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdExpc3RGZWF0dXJlZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-u9lpc7h9m7
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductName.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdE5hbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-quw2v3xcr1
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductPrice.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdFByaWNlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-fif3zmw0hx
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductQuantity.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdFF1YW50aXR5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-s2j6diprmx
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductRating.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdFJhdGluZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ih7bbfki3d
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductReview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdFJldmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-3xx575gmye
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductSize.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdFNpemUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-7nvyep0l5m
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Product/SubComponents/ProductView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9kdWN0XFN1YkNvbXBvbmVudHNcUHJvZHVjdFZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ok8fisuq4n
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Profile/Pages/EditProfile.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9maWxlXFBhZ2VzXEVkaXRQcm9maWxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-i6qyaopl8f
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Profile/Pages/ProfileHome.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQcm9maWxlXFBhZ2VzXFByb2ZpbGVIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-41e4oelbvc
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Review/Pages/AddReview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXZpZXdcUGFnZXNcQWRkUmV2aWV3LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-vd1er19la5
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Review/Pages/Reviews.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXZpZXdcUGFnZXNcUmV2aWV3cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-fzgq7y8y7d
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Review/SubComponents/ReviewCard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSZXZpZXdcU3ViQ29tcG9uZW50c1xSZXZpZXdDYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-nam9egjqmx
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Welcome/Pages/GetStarted.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xXZWxjb21lXFBhZ2VzXEdldFN0YXJ0ZWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-ob33vu6ilv
+
+[C:/Users/PC/Desktop/Manero_Webapp/Manero_WebApp/Components/Welcome/Pages/Welcome.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xXZWxjb21lXFBhZ2VzXFdlbGNvbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-43fi9igf3b

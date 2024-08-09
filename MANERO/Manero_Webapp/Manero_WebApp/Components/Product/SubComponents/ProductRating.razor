@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Components
+@implements IDisposable
+
+<link rel="stylesheet" href="ProductRating.razor.css" />
+
+
+<div class="rating">
+    @for (int i = 1; i <= 5; i++)
+    {
+        <span class="star @((i <= (HoveredRating > 0 ? HoveredRating : CurrentRating)) ? "filled" : "")"
+              @onclick="() => SetRating(i)"
+              @onmouseover="() => HoverRating(i)"
+              @onmouseout="ResetHoverRating">
+            &#9733;
+        </span>
+    }
+</div>
+
+@code {
+    private int CurrentRating { get; set; } = 0;
+    private int HoveredRating { get; set; } = 0;
+
+    private void SetRating(int rating)
+    {
+        CurrentRating = rating;
+    }
+
+    private void HoverRating(int rating)
+    {
+        HoveredRating = rating;
+    }
+
+    private void ResetHoverRating()
+    {
+        HoveredRating = 0;
+    }
+
+    public void Dispose()
+    {
+        ResetHoverRating();
+    }
+}
